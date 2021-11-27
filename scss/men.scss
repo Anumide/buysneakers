@@ -5,27 +5,48 @@
     font-family: 'Kumbh Sans', sans-serif;;
 }
 
+    // header section
 header{
     margin: 2em 0;
 }
 
+    // navigation
 header nav{
     display: flex;
 }
 
-div.navLinks ul{
-    display: flex;
-    li{
-        list-style-type: none;
-    }
-}
+    // nav links and ralated dsigns
 
+div.navLinks{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    ul{
+        display: flex;
+        align-items: center;
+        li{
+            list-style-type: none;
+            padding: 0 5%;
+        }
+    }
+} 
+
+    // carr and profile design
 div.cartProfile{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+    // design fpr cart
+div.cart{
+    width: 15%;
+    img{
+        width: 100%;
+    }
+}
+
+    // profile image design
 div.profile{
     width: 35%;
     border: 2px solid transparent;
