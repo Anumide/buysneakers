@@ -5,6 +5,41 @@
     font-family: 'Kumbh Sans', sans-serif;;
 }
 
+header{
+    margin: 2em 0;
+}
+
 header nav{
     display: flex;
+}
+
+div.navLinks ul{
+    display: flex;
+    li{
+        list-style-type: none;
+    }
+}
+
+div.cartProfile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.profile{
+    width: 35%;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    transition: border .3s linear;
+    &:hover{
+        border: 2px solid $orange;
+        //width: 34%;
+    }
+    img{
+        width: 100%;
+        transition: width .1s ease-in;
+        &:hover{
+            width: 99%;
+        }
+    }
 }
