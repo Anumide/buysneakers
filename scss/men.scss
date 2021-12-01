@@ -7,7 +7,8 @@
 
     // header section
 header{
-    margin: 2em 0;
+    padding: 2em 0;
+    border-bottom: 1px solid #eee;
 }
 
     // navigation
@@ -15,32 +16,43 @@ header nav{
     display: flex;
 }
 
-    // nav links and ralated dsigns
+    // design for logo
+div.logo{
+    line-height: 2.5em;
+}
+
+    // nav links and related designs
 
 div.navLinks{
     flex-grow: 1;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     ul{
         display: flex;
         align-items: center;
         li{
             list-style-type: none;
             padding: 0 5%;
+            a{
+                text-decoration: none;
+                color: $grayishBlue;
+                font-weight: 500;
+            }
         }
     }
 } 
 
-    // carr and profile design
+    // cart and profile design
 div.cartProfile{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
-    // design fpr cart
+    // design for cart
 div.cart{
-    width: 15%;
+    width: 20%;
+
     img{
         width: 100%;
     }
@@ -48,7 +60,7 @@ div.cart{
 
     // profile image design
 div.profile{
-    width: 35%;
+    width: 40%;
     border: 2px solid transparent;
     border-radius: 50%;
     transition: border .3s linear;
