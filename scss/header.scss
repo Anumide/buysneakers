@@ -1,0 +1,113 @@
+@import 'variable';
+
+*{
+    font-family: 'Kumbh Sans', sans-serif;;
+}
+
+    // header section
+header{
+    padding: 2em 0;
+    border-bottom: 1px solid #eee;
+}
+
+    // navigation
+header nav{
+    display: flex;
+}
+
+    // design for logo
+div.logo{
+    line-height: 2.5em;
+}
+
+    // nav links and related designs
+
+div.navLinks{
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    ul{
+        display: flex;
+        align-items: center;
+        li{
+            list-style-type: none;
+            padding: 0 5%;
+            a{
+                position: relative;
+                text-decoration: none;
+                color: $grayishBlue;
+                font-weight: 500;
+                transition: color .3s, font-weight .2s;
+                &:hover{
+                    font-weight: 900;
+                    color: rgba($color: #000000, $alpha: .7);
+                }
+                &::before{
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 0;
+                    transition: height .3s ease-in-out;
+                    background: $orange;
+                    top: 4em;
+                }
+                &:hover::before{
+                    height: 4px;
+                }
+            }
+        }
+    }
+} 
+
+    // cart and profile design
+div.cartProfile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    // design for cart
+div.cart{
+    width: 20%;
+    position: relative;
+    svg{
+        fill: #69707D;
+        cursor: pointer;
+        transition: fill .2s ease-in;
+        &:hover{
+            fill: #000;
+        }
+    }
+}
+
+    // design for number of cart
+span.cart-number{
+    position: absolute;
+    background: $orange;
+    color: $white;
+    top: -0.5em;
+    right: 0.03em;
+    padding: 0 0.3em;
+    border-radius: 30%;
+    font-size: 0.7rem;
+}
+
+    // profile image design
+div.profile{
+    width: 40%;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    transition: border .3s linear;
+    cursor: pointer;
+    &:hover{
+        border: 2px solid $orange;
+        //width: 34%;
+    }
+    img{
+        width: 100%;
+        transition: width .1s ease-in;
+        &:hover{
+            width: 99%;
+        }
+    }
+}
