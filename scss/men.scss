@@ -1,6 +1,9 @@
 @import 'variable';
 @import 'header';
 
+
+// for product information, images of products and product details 
+
 div.product-info{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -36,13 +39,15 @@ div.thumbnail{
             transition: border 200ms ease-out,
                         background 200ms ease-out ;
         }
-        &:hover::before, &:active::before, &:focus::before{
+        &:hover::before{
             content: '';
             position: absolute;
-            border: 2px solid #ff7d1a;
             border-radius: 15%;
             background: #fff;
             opacity: .7;
+        }
+        &:active::before, &:focus::before{
+            border: 2px solid #ff7d1a;
         }
         img{
             width: 100%;
@@ -56,4 +61,28 @@ div.thumbnail > span:nth-child(1){
 
 div.thumbnail > span:nth-child(4){
     margin-right: 0;
+}
+
+div.product-details{
+    padding: 3em;
+    small{
+        text-transform: uppercase;
+        font-weight: bolder;
+        color: $orange;
+        font-size: .7rem;
+        letter-spacing: .1em;
+    }
+    h2{
+        width: 90%;
+        font-weight: 900;
+        font-size: 2.1rem;
+        margin: 0.3em 0;
+    }
+    p{
+        margin: 2em 0;
+        width: 100%;
+        font-size: .75rem;
+        font-weight: 600;
+        color: hsl(220, 7%, 56%);
+    }
 }
