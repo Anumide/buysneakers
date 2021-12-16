@@ -2,6 +2,9 @@
 @import 'header';
 
 
+body{
+    scroll-behavior: smooth;
+}
 // for product information, images of products and product details 
 
 div.product-info{
@@ -167,4 +170,30 @@ div.add-to-cart-btn{
             fill: $white;
         }
     }
+}
+
+.black-border{
+    box-shadow: 0px 0px 6px 1px rgba($color: #000000, $alpha: .4);
+}
+
+.blue-border{
+    box-shadow: 0px 0px 6px 1px rgba($color: #535bcf, $alpha: .4);
+}
+
+.active{
+    font-weight: 900 !important;
+    color: rgba($color: #000000, $alpha: .7) !important;
+}
+
+.back-to-top{
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 3%;
+    box-shadow: 0px 0px 6px 1px rgba($color: #000000, $alpha: .4);
 }
