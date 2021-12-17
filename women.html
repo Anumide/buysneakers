@@ -29,16 +29,16 @@
             <nav>
                <!-- navbar for logo and links -->
               <div class="logo">
-                <img src="images/logo.svg" alt="Sneakers">
+                <a href="/"><img src="images/logo.svg" alt="Sneakers"></a>
               </div>
 
               <div class="navLinks">
                 <ul>
                   <li><a href="#">Collections</a></li>
-                  <li><a href="#">Men</a></li>
-                  <li><a href="#">Women</a></li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li><a href="men.html">Men</a></li>
+                  <li><a href="women.html" class="active">Women</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="contact.html">Contact</a></li>
                 </ul>
               </div>
 
@@ -60,49 +60,69 @@
         <main>
             <!-- section for a whole product and details -->
           <div class="product-info">
-              <!-- div for product images -->
-            <div class="product-image">
-              <div class="main-image">
-                <img src="./images/image-product-1.jpg" alt="Sneakers">
-              </div>
-                <!-- thumbnails -->
-              <div class="thumbnail">
-                <span>
-                  <img src="./images/image-product-1-thumbnail.jpg" alt="">
-                </span>
-                <span>
-                  <img src="./images/image-product-2-thumbnail.jpg" alt="">
-                </span>
-                <span>
-                  <img src="./images/image-product-3-thumbnail.jpg" alt="">
-                </span>
-                <span>
-                  <img src="./images/image-product-4-thumbnail.jpg" alt="">
-                </span>
-              </div><!--end of thumbnails -->
-            </div><!--end of div for product images -->
-              <!-- details of products -->
-            <div class="product-details">
-              <small>Sneaker Company</small>
-              <h2>Fall Limited Edition Sneakers</h2>
-              <p>These low-profile sneakers are your perfect casual wear companion. Featuring a 
-                durable rubber outer sole, they’ll withstand everything the weather can offer.
-              </p>
-                <!-- prices and discount -->
+            <!-- div for product images -->
+          <div class="product-image">
+            <div class="main-image">
+              <img src="./images/image-product-1.jpg" alt="Sneakers">
+            </div>
+              <!-- thumbnails -->
+            <div class="thumbnail">
               <span>
-                <strong>$125.00</strong>
-                <p>50%</p>
-              </span><!--end of prices and discount -->
-              $250.00
+                <img src="./images/image-product-1-thumbnail.jpg" alt="">
+              </span>
+              <span>
+                <img src="./images/image-product-2-thumbnail.jpg" alt="">
+              </span>
+              <span>
+                <img src="./images/image-product-3-thumbnail.jpg" alt="">
+              </span>
+              <span>
+                <img src="./images/image-product-4-thumbnail.jpg" alt="">
+              </span>
+            </div><!--end of thumbnails -->
+          </div><!--end of div for product images -->
+            <!-- details of products -->
+          <div class="product-details">
+            <small>Sneaker Company</small>
+            <h2>Fall Limited Edition Sneakers</h2>
+            <p class="product-details-text">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+              durable rubber outer sole, they’ll withstand everything the weather can offer.
+            </p>
+              <!-- prices and discount -->
+            <span>
+              <p>$125.00</p>
+              <p>50%</p>
+            </span><!--end of prices and discount -->
+            <p>$250.00</p>
+            <div class="add-to-cart">
+              <div class="number-of-product">
+                <p>-</p>
+                <p>0</p>
+                <p>+</p>
+              </div>
 
-            </div><!--end of details of products -->
+              <div class="add-to-cart-btn">
+                <button>
+                  <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill-rule="nonzero"/></svg>
+                  Add to cart</button>
+              </div>
+            </div>
 
-          </div> <!--end of section for a whole product and details -->
+          </div><!--end of details of products -->
+
+        </div> <!--end of section for a whole product and details -->
+
         </main>
-    </div>
 
-  0
-  Add to cart
+        <a class="back-to-top" href="#top">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-up" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff7d1a" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <line x1="16" y1="9" x2="12" y2="5" />
+            <line x1="8" y1="9" x2="12" y2="5" />
+          </svg>
+        </a>
+    </div>
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
