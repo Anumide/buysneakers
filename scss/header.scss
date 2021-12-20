@@ -85,15 +85,36 @@ div.cart{
 }
 
     // design for number of cart
-span.cart-number{
+.empty-cart{
+    opacity: 0;
     position: absolute;
     background: $orange;
     color: $white;
     top: -0.5em;
     right: 0.03em;
-    padding: 0 0.3em;
+    padding: .7em 0;
+    line-height: 0;
+    width: 50%;
     border-radius: 30%;
     font-size: 0.7rem;
+    text-align: center;
+    transition: opacity 400ms linear;
+}
+
+.cart-number{
+    position: absolute;
+    background: $orange;
+    color: $white;
+    top: -0.5em;
+    right: 0.03em;
+    padding: .7em 0;
+    line-height: 0;
+    width: 50%;
+    border-radius: 30%;
+    font-size: 0.7rem;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 400ms linear;
 }
 
     // profile image design
