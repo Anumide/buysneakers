@@ -18,3 +18,43 @@
     height: 100%;
     background: rgba($color: #000000, $alpha: .5);
 }
+
+.product-carousel{
+    width: 35%;
+    height: 50%;
+    margin: 15vh auto;
+}
+
+.carousel-inner{
+    border-radius: 15px;
+}
+
+.carousel-btn{
+    color: white;
+    opacity: .9;
+    top: 3em;
+    &:hover svg{
+        stroke: $orange;
+    }
+    span{
+        width: 4rem;
+        height: 4rem;
+        background-color: $white;
+        border-radius: 50%;
+        line-height: 3.5;
+        svg{
+            stroke: #1D2026;
+            transition: stroke 200ms linear;
+        }
+    }
+}
+
+.carousel-prev-btn{
+    left: -2em;
+}
+
+.carousel-next-btn{
+    right: -2em;
+}
+
+
