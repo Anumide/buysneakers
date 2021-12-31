@@ -1,10 +1,12 @@
 let backToTop = document.querySelector('.back-to-top')
-    mainProductImage = document.querySelector('.main-image')
+    mainProductImage = document.querySelector('.main-image img')
     productCarousel = document.querySelector('.product-carousel-parent')
     closeCarousel = document.querySelector('.close-btn')
-    thumbnails = Array.from(document.querySelectorAll('#carousel-product span'))
-    productImage = document.querySelector('div.carousel-item.active > img')
+    carouselThumbnails = Array.from(document.querySelectorAll('#carousel-product span'))
+    carouselProductImage = document.querySelector('div.carousel-item.active img')
     imageSrc = ['./images/image-product-1.jpg', './images/image-product-2.jpg', './images/image-product-3.jpg', './images/image-product-4.jpg']
+    nikeImageSrc = ['./images/nike-product-1.jpg', './images/nike-product-2.jpg', './images/nike-product-3.jpg', './images/nike-product-4.jpg'],
+    addidasImageSrc = ['./images/addidas-product-1.jpg', './images/addidas-product-2.jpg', './images/addidas-product-3.jpg', './images/addidas-product-4.jpg']
 
 
 
@@ -21,15 +23,19 @@ window.addEventListener('scroll', (e) => {
 // initializing product image to show carousel on click
 mainProductImage.addEventListener('click', (e) => {
     productCarousel.classList.remove('carousel-closed')
+    productCarousel.classList.remove('hidden')
+    productCarousel.classList.add('carousel-open')
 })
 
 closeCarousel.addEventListener('click', () => { 
     productCarousel.classList.add('carousel-closed')
+    productCarousel.classList.remove('carousel-open')
 })
 
 
+
  //function for getting sibliing elements
- let getSiblings = function (e) {
+ let getSiblingss = function (e) {
     // for collecting siblings
     let siblings = []; 
     // if no parent, return no sibling
@@ -50,12 +56,12 @@ closeCarousel.addEventListener('click', () => {
 };
 
 // functionality for changing product image
-for (let i = 0; i < thumbnails.length; i++) {
-const element = thumbnails[i]
+for (let i = 0; i < carouselThumbnails.length; i++) {
+const element = carouselThumbnails[i]
 element.addEventListener('click', () => {
-    productImage.setAttribute('src', imageSrc[i])
+    carouselProductImage.setAttribute('src', imageSrc[i])
     element.classList.add('active-thumbnail') 
-    getSiblings(element).forEach(e => {
+    getSiblingss(element).forEach(e => {
         e.classList.remove('active-thumbnail')
     });
 })
