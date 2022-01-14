@@ -150,21 +150,24 @@ div.profile{
     width: 4%;
     height: 8%;
     transition: transform 200ms linear;
-    transform: translateX(150px);
+    transform: translateX(350px);
     &:hover, &:active{
         border: 1px solid $orange;
     }
     svg{
-        animation: bounce .6s infinite ease-out;
+        animation: bounce .9s infinite ease-out;
     }
 }
 
 @keyframes bounce {
-    from{
+    0%{
         transform: translateY(-2px);
     }
-    to{
+    50%{
         transform: translateY(3px);
+    }
+    100%{
+        transform: translateY(-2px);
     }
 }
 

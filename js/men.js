@@ -12,6 +12,13 @@ let imageSrc = ['./images/image-product-1.jpg', './images/image-product-2.jpg', 
     nikeImageSrc = ['./images/nike-product-1.jpg', './images/nike-product-2.jpg', './images/nike-product-3.jpg', './images/nike-product-4.jpg'],
     addidasImageSrc = ['./images/addidas-product-1.jpg', './images/addidas-product-2.jpg', './images/addidas-product-3.jpg', './images/addidas-product-4.jpg']
 
+let mainProductImage = document.querySelector('.main-image img')
+    productCarousel = document.querySelector('.product-carousel-parent')
+    closeCarousel = document.querySelector('.close-btn')
+    carouselThumbnails = Array.from(document.querySelectorAll('#carousel-product span'))
+    carouselProductImage = document.querySelector('div.carousel-item.active img')
+
+
         //function for getting sibliing elements
     let getSiblings = function (e) {
         // for collecting siblings
@@ -127,3 +134,31 @@ increaseNumThree.addEventListener('click', () => {
     decreaseNumThree.style.opacity = '1'
     numOfOrderThree.textContent++
 })
+
+
+// functionality for carousel
+
+// initializing product image to show carousel on click
+mainProductImage.addEventListener('click', (e) => {
+    productCarousel.classList.remove('carousel-closed')
+    productCarousel.classList.remove('hidden')
+    productCarousel.classList.add('carousel-open')
+})
+
+closeCarousel.addEventListener('click', (e) => { 
+    productCarousel.classList.add('carousel-closed')
+    productCarousel.classList.remove('carousel-open')
+})
+
+// functionality for changing product image
+// product image
+for (let i = 0; i < carouselThumbnails.length; i++) {
+    const element = carouselThumbnails[i]
+    element.addEventListener('click', () => {
+        carouselProductImage.setAttribute('src', imageSrc[i])
+        element.classList.add('active-thumbnail') 
+        getSiblings(element).forEach(e => {
+            e.classList.remove('active-thumbnail')
+        });
+    })
+    }

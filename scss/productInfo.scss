@@ -15,6 +15,7 @@ div.main-image{
     cursor: pointer;
     img{
         width: 100%;
+        animation: fade-in 500ms linear;
     }
 }
 
@@ -166,7 +167,7 @@ div.add-to-cart-btn{
     }
 }
 
-// design for actic=ve thumbnail
+// design for active thumbnail
 .active-thumbnail{
     &::before{
         content: '';
@@ -224,7 +225,7 @@ div.add-to-cart-btn{
     
 }
 
-.product-carousel-parent, .nike-carousel-parent{
+.product-carousel-parent{
     position: fixed;
     left: 0;
     top: 0;
@@ -303,4 +304,9 @@ div.add-to-cart-btn{
     100%{
         transform: scale(0);
     }
+}
+
+@keyframes fade-in{
+    0%{opacity: 0}
+    100%{opacity: 1;}
 }
