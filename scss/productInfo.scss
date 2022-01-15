@@ -283,6 +283,7 @@ div.add-to-cart-btn{
     top: -2em;
     left: 95%;
     z-index: 100;
+    cursor: pointer;
     svg{
         fill: $white;
         transition: fill 100ms linear;
