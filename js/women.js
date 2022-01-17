@@ -15,10 +15,22 @@ let alexanderImgSrc = ['./images/alexander-women-product-1.jpg', './images/alexa
     offWhiteImgSrc = ['./images/off-white-women-product-1.jpg', './images/off-white-women-product-2.jpg', './images/off-white-women-product-3.jpg', './images/off-white-women-product-4.jpg']
     vejaImgSrc = ['./images/veja-women-product-1.jpg', './images/veja-women-product-2.jpg', './images/veja-women-product-3.jpg', './images/veja-women-product-4.jpg']
 
-let productCarousel = document.querySelector('.product-carousel-parent')
-    closeCarousel = document.querySelector('.close-btn')
+let productCarousel = document.querySelector('#alexander-carousel')
+    closeCarousel = document.querySelectorAll('.close-btn')
     carouselThumbnails = Array.from(document.querySelectorAll('#alexander-carousel-product span'))
     carouselProductImage = document.querySelectorAll('div.carousel-item')
+
+let balenciagaCarousel = document.querySelector('#balenciaga-carousel'),
+    balenciagaCarouselTumbnails = document.querySelectorAll('#balenciaga-carousel-product span'),
+    balenciagaCarouselImage = document.querySelectorAll('#balenciaga-carousel-item div')
+
+let offWhiteCarousel = document.querySelector('#offwhite-carousel'),
+    offWhiteCarouselThumbnails = document.querySelectorAll('#offwhite-carousel-product span'),
+    offWhiteCarouselImage = document.querySelectorAll('#offwhite-carousel-item div')
+
+let vejaCarousel = document.querySelector('#veja-carousel'),
+    vejaCarouselThumbnails = document.querySelectorAll('#veja-carousel-product span'),
+    vejaCarouselImage = document.querySelectorAll('#veja-carousel-item div')
 
 
 
@@ -177,11 +189,41 @@ alexanderProductImage.addEventListener('click', (e) => {
     productCarousel.classList.add('carousel-open')
 })
 
-closeCarousel.addEventListener('click', (e) => { 
-    productCarousel.classList.add('carousel-closed')
-    productCarousel.classList.remove('carousel-open')
+//for balenciaga
+balenciagaProductImage.addEventListener('click', ()=>{
+    balenciagaCarousel.classList.remove('carousel-closed')
+    balenciagaCarousel.classList.remove('hidden')
+    balenciagaCarousel.classList.add('carousel-open')
 })
 
+//for offwhite
+offWhiteProductImage.addEventListener('click', ()=>{
+    offWhiteCarousel.classList.remove('carousel-closed')
+    offWhiteCarousel.classList.remove('hidden')
+    offWhiteCarousel.classList.add('carousel-open')
+})
+
+//for veja 
+vejaProductImage.addEventListener('click', ()=>{
+    vejaCarousel.classList.remove('carousel-closed')
+    vejaCarousel.classList.remove('hidden')
+    vejaCarousel.classList.add('carousel-open')
+})
+
+
+
+closeCarousel.forEach(btn =>{
+    btn.addEventListener('click', (e) => { 
+        productCarousel.classList.add('carousel-closed')
+        productCarousel.classList.remove('carousel-open')
+        balenciagaCarousel.classList.add('carousel-closed')
+        balenciagaCarousel.classList.remove('carousel-open')
+        offWhiteCarousel.classList.add('carousel-closed')
+        offWhiteCarousel.classList.remove('carousel-open')
+        vejaCarousel.classList.add('carousel-closed')
+        vejaCarousel.classList.remove('carousel-open')
+    })    
+})
 // functionality for changing product image
 // product image
 for (let i = 0; i < carouselThumbnails.length; i++) {
@@ -198,4 +240,53 @@ for (let i = 0; i < carouselThumbnails.length; i++) {
         });
     })
 }
+
+//for balenciaga
+for (let i = 0; i < balenciagaCarouselTumbnails.length; i++) {
+    const element = balenciagaCarouselTumbnails[i]
+    element.addEventListener('click', () => {
+        balenciagaCarouselImage.forEach(image =>{
+            if(image.classList.contains('active')){
+                image.firstElementChild.setAttribute('src', balenciagaImgSrc[i])
+            }
+        })
+        element.classList.add('active-thumbnail') 
+        getSiblings(element).forEach(e => {
+            e.classList.remove('active-thumbnail')
+        });
+    })
+}
+
+//for offwhite
+for (let i = 0; i < offWhiteCarouselThumbnails.length; i++) {
+    const element = offWhiteCarouselThumbnails[i]
+    element.addEventListener('click', () => {
+        offWhiteCarouselImage.forEach(image =>{
+            if(image.classList.contains('active')){
+                image.firstElementChild.setAttribute('src', offWhiteImgSrc[i])
+            }
+        })
+        element.classList.add('active-thumbnail') 
+        getSiblings(element).forEach(e => {
+            e.classList.remove('active-thumbnail')
+        });
+    })
+}
+
+//for veja
+for (let i = 0; i < vejaCarouselThumbnails.length; i++) {
+    const element = vejaCarouselThumbnails[i]
+    element.addEventListener('click', () => {
+        vejaCarouselImage.forEach(image =>{
+            if(image.classList.contains('active')){
+                image.firstElementChild.setAttribute('src', vejaImgSrc[i])
+            }
+        })
+        element.classList.add('active-thumbnail') 
+        getSiblings(element).forEach(e => {
+            e.classList.remove('active-thumbnail')
+        });
+    })
+}
+
    
