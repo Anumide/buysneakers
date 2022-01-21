@@ -16,7 +16,7 @@ let //mainProductImage = document.querySelector('.main-image img')
     productCarousel = document.querySelector('#product-carousel')
     closeCarousel = document.querySelectorAll('.close-btn')
     carouselThumbnails = Array.from(document.querySelectorAll('#carousel-product span'))
-    carouselProductImage = document.querySelector('div.carousel-item.active img')
+    carouselProductImage = document.querySelectorAll('#carousel-item div')
 
 let nikeCarousel = document.querySelector('#nike-carousel'),
     nikeCarouselThumbnais = document.querySelectorAll('#nike-carousel-product span'),
@@ -182,10 +182,44 @@ closeCarousel.forEach(btn =>{
 for (let i = 0; i < carouselThumbnails.length; i++) {
     const element = carouselThumbnails[i]
     element.addEventListener('click', () => {
-        carouselProductImage.setAttribute('src', imageSrc[i])
+        carouselProductImage.forEach(image =>{
+            if(image.classList.contains('active')){
+                image.firstElementChild.setAttribute('src', imageSrc[i])
+            }
+        })
         element.classList.add('active-thumbnail') 
         getSiblings(element).forEach(e => {
             e.classList.remove('active-thumbnail')
         });
     })
-    }
+}
+
+for (let i = 0; i < nikeCarouselThumbnais.length; i++) {
+    const element = nikeCarouselThumbnais[i]
+    element.addEventListener('click', () => {
+        nikeCarouselImage.forEach(image =>{
+            if(image.classList.contains('active')){
+                image.firstElementChild.setAttribute('src', nikeImageSrc[i])
+            }
+        })
+        element.classList.add('active-thumbnail') 
+        getSiblings(element).forEach(e => {
+            e.classList.remove('active-thumbnail')
+        });
+    })
+}
+   
+for (let i = 0; i < addidasCarouselThumbnails.length; i++) {
+    const element = addidasCarouselThumbnails[i]
+    element.addEventListener('click', () => {
+       addidasCarouselImage.forEach(image =>{
+            if(image.classList.contains('active')){
+                image.firstElementChild.setAttribute('src', addidasImageSrc[i])
+            }
+        })
+        element.classList.add('active-thumbnail') 
+        getSiblings(element).forEach(e => {
+            e.classList.remove('active-thumbnail')
+        });
+    })
+}

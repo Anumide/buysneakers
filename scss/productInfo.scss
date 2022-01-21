@@ -15,7 +15,7 @@ div.main-image{
     cursor: pointer;
     img{
         width: 100%;
-        animation: fade-in 500ms linear;
+        //animation: fade-in 500ms linear;
     }
 }
 
@@ -236,7 +236,7 @@ div.add-to-cart-btn{
 }
 
 .carousel-open{
-    animation: wide-in 300ms linear forwards;
+    animation: fade-in 300ms linear forwards;
     visibility: visible;
 }
 
@@ -263,6 +263,8 @@ div.add-to-cart-btn{
         background-color: $white;
         border-radius: 50%;
         line-height: 2.7;
+        position: absolute;
+        top: 140px;
         svg{
             stroke: #1D2026;
             transition: stroke 200ms linear;
@@ -294,20 +296,17 @@ div.add-to-cart-btn{
     
 }
 
-@keyframes wide-in {
+@keyframes fade-in {
     0%{
-        transform: scale(0);
+        opacity: 0;
     }
-    100%{transform: scale(1);}
+    100%{
+        opacity: 1;
+    }
 }
 
 @keyframes fade-out {
     100%{
-        transform: scale(0);
+        opacity: 0;
     }
-}
-
-@keyframes fade-in{
-    0%{opacity: 0}
-    100%{opacity: 1;}
 }

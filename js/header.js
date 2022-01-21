@@ -1,4 +1,4 @@
-// variables for men.html
+
 let backToTop = document.querySelector('.back-to-top')
 
 
