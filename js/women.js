@@ -224,8 +224,6 @@ closeCarousel.forEach(btn =>{
         vejaCarousel.classList.remove('carousel-open')
     })    
 })
-
-
 // functionality for changing product image
 // product image
 for (let i = 0; i < carouselThumbnails.length; i++) {
