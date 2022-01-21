@@ -221,7 +221,7 @@ div.add-to-cart-btn{
 }
 
 .carousel-closed{
-    animation: fade-out 200ms linear forwards;
+    animation: fade-out 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
     
 }
 
@@ -236,12 +236,12 @@ div.add-to-cart-btn{
 }
 
 .carousel-open{
-    animation: wide-in 300ms linear forwards;
+    animation: wide-in 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     visibility: visible;
 }
 
 .product-carousel{
-    width: 28%;
+    width: 400px;
     height: 50%;
     margin: 15vh auto;
 }
@@ -263,6 +263,8 @@ div.add-to-cart-btn{
         background-color: $white;
         border-radius: 50%;
         line-height: 2.7;
+        position: absolute;
+        top: 140px; 
         svg{
             stroke: #1D2026;
             transition: stroke 200ms linear;
@@ -295,16 +297,37 @@ div.add-to-cart-btn{
 }
 
 @keyframes wide-in {
-    0%{
-        transform: scale(0);
-    }
-    100%{transform: scale(1);}
+    0% {
+        -webkit-transform: scale(0);
+                transform: scale(0);
+        -webkit-transform-origin: 0% 50%;
+                transform-origin: 0% 50%;
+        opacity: 1;
+      }
+      100% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-transform-origin: 0% 50%;
+                transform-origin: 0% 50%;
+        opacity: 1;
+      }
 }
 
 @keyframes fade-out {
-    100%{
-        transform: scale(0);
-    }
+    0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-transform-origin: 0% 50%;
+                transform-origin: 0% 50%;
+        opacity: 1;
+      }
+      100% {
+        -webkit-transform: scale(0);
+                transform: scale(0);
+        -webkit-transform-origin: 0% 50%;
+                transform-origin: 0% 50%;
+        opacity: 1;
+      }
 }
 
 @keyframes fade-in{
