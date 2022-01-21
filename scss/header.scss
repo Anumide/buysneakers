@@ -6,8 +6,6 @@
 
 body{
     scroll-behavior: smooth;
-    animation: blurred-in 0.7s 0.5s linear forwards;
-    opacity: 0;
 }
 
     // header section
@@ -148,22 +146,35 @@ div.profile{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
     width: 4%;
     height: 8%;
     transition: transform 200ms linear;
-    //transform: translateX(350px);
-    &:hover, &:active{
-        border: 1px solid $orange;
+    transform: translateX(350px);
+    &:hover svg, &:active svg{
+        stroke: #eee;
+    }
+    &:hover #svg-fill{
+        fill: #ff7d1a;
     }
     svg{
+        stroke: #ff7d1a;
+        transition: stroke 0.2s;
         animation: bounce .9s infinite ease-out;
+        border-radius: 3px;
     }
 }
+
 
 .active{
     font-weight: 900 !important;
     color: rgba($color: #000000, $alpha: .7) !important;
+
+}
+
+#svg-fill{
+    fill: transparent;
+    transition: fill 0.2s;
+
 }
 
 @keyframes bounce {
