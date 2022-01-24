@@ -1,4 +1,5 @@
 @import 'variable';
+@import 'mixins';
 
 *{
     font-family: 'Kumbh Sans', sans-serif;;
@@ -12,16 +13,39 @@ body{
 header{
     padding: 2em 0;
     border-bottom: 1px solid #eee;
+    @include mQ(780px){
+        border-bottom: none;
+        padding: 0.5em;
+
+    }
 }
 
     // navigation
 header nav{
     display: flex;
+    @include mQ(780px){
+        justify-content: space-between;
+    }
 }
+
+div.hamburger{
+    display: none;
+    @include mQ(780px){
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        margin-right: 25px;
+    }
+}
+
 
     // design for logo
 div.logo{
     line-height: 2.5em;
+    @include mQ(780px){
+        width: 85%;
+    }
 }
 
     // nav links and related designs
@@ -30,6 +54,9 @@ div.navLinks{
     flex-grow: 1;
     display: flex;
     align-items: flex-end;
+    @include mQ(780px){
+        display: none;
+    }
     ul{
         display: flex;
         align-items: center;
