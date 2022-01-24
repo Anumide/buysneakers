@@ -13,7 +13,10 @@ body{
 header{
     padding: 2em 0;
     border-bottom: 1px solid #eee;
-    @include mQ(780px){
+    @include mQ(800px){
+        padding: 1.5em 0;
+    }
+    @include mQ(450px){
         border-bottom: none;
         padding: 0.5em;
 
@@ -23,14 +26,14 @@ header{
     // navigation
 header nav{
     display: flex;
-    @include mQ(780px){
+    @include mQ(450px){
         justify-content: space-between;
     }
 }
 
 div.hamburger{
     display: none;
-    @include mQ(780px){
+    @include mQ(450px){
         display: flex;
         justify-content: center;
         align-items: center;
@@ -43,8 +46,14 @@ div.hamburger{
     // design for logo
 div.logo{
     line-height: 2.5em;
-    @include mQ(780px){
+    @include mQ(800px){
+        width: 17%;
+    }
+    @include mQ(450px){
         width: 85%;
+    }
+    img{
+        width: 100%;
     }
 }
 
@@ -54,12 +63,15 @@ div.navLinks{
     flex-grow: 1;
     display: flex;
     align-items: flex-end;
-    @include mQ(780px){
+    @include mQ(450px){
         display: none;
     }
     ul{
         display: flex;
         align-items: center;
+        @include mQ(800px){
+            margin: 7px
+        }
         li{
             list-style-type: none;
             padding: 0 5%;
@@ -69,6 +81,9 @@ div.navLinks{
                 color: $grayishBlue;
                 font-weight: 500;
                 transition: color .3s, font-weight .2s;
+                @include mQ(800px){
+                    font-size: 0.85rem;
+                }
                 &:hover{
                     font-weight: 900;
                     color: rgba($color: #000000, $alpha: .7);
@@ -95,6 +110,9 @@ div.cartProfile{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include mQ(800px){
+        width: 13%;
+    }
 }
 
     // design for cart
