@@ -13,10 +13,18 @@ let imageSrc = ['./images/image-product-1.jpg', './images/image-product-2.jpg', 
     addidasImageSrc = ['./images/addidas-product-1.jpg', './images/addidas-product-2.jpg', './images/addidas-product-3.jpg', './images/addidas-product-4.jpg']
 
 let mainProductImage = document.querySelector('.main-image img')
-    productCarousel = document.querySelector('.product-carousel-parent')
-    closeCarousel = document.querySelector('.close-btn')
+    productCarousel = document.querySelector('#product-carousel')
+    closeCarousel = document.querySelectorAll('.close-btn')
     carouselThumbnails = Array.from(document.querySelectorAll('#carousel-product span'))
     carouselProductImage = document.querySelectorAll('#carousel-item div')
+
+let nikeCarousel = document.querySelector('#nike-carousel'),
+    nikeCarouselThumbnails = document.querySelectorAll('#nike-carousel-product span'),
+    nikeCarouselImage = document.querySelectorAll('#nike-carousel-item div')
+
+let addidasCarousel = document.querySelector('#addidas-carousel'),
+    addidasCarouselThumbnails = document.querySelectorAll('#addidas-carousel-product span'),
+    addidasCarouselImage = document.querySelectorAll('#addidas-carousel-item div')
 
 
         //function for getting sibliing elements
@@ -145,9 +153,27 @@ mainProductImage.addEventListener('click', (e) => {
     productCarousel.classList.add('carousel-open')
 })
 
-closeCarousel.addEventListener('click', (e) => { 
-    productCarousel.classList.add('carousel-closed')
-    productCarousel.classList.remove('carousel-open')
+nikeProductImage.addEventListener('click', (e) => {
+    nikeCarousel.classList.remove('carousel-closed')
+    nikeCarousel.classList.remove('hidden')
+    nikeCarousel.classList.add('carousel-open')
+})
+
+addidasProductImage.addEventListener('click', (e) => {
+    addidasCarousel.classList.remove('carousel-closed')
+    addidasCarousel.classList.remove('hidden')
+    addidasCarousel.classList.add('carousel-open')
+})
+
+closeCarousel.forEach(btn =>{
+    btn.addEventListener('click', (e) => { 
+        productCarousel.classList.add('carousel-closed')
+        productCarousel.classList.remove('carousel-open')
+        nikeCarousel.classList.add('carousel-closed')
+        nikeCarousel.classList.remove('carousel-open')
+        addidasCarousel.classList.add('carousel-closed')
+        addidasCarousel.classList.remove('carousel-open')
+    })
 })
 
 // functionality for changing product image
@@ -167,8 +193,8 @@ for (let i = 0; i < carouselThumbnails.length; i++) {
     })
 }
 
-for (let i = 0; i < nikeCarouselThumbnais.length; i++) {
-    const element = nikeCarouselThumbnais[i]
+for (let i = 0; i < nikeCarouselThumbnails.length; i++) {
+    const element = nikeCarouselThumbnails[i]
     element.addEventListener('click', () => {
         nikeCarouselImage.forEach(image =>{
             if(image.classList.contains('active')){
