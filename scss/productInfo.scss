@@ -67,6 +67,9 @@ div.product-details{
     @include mQ(1100px){
         padding: 3em 0;
     }
+    @include mQ(800px){
+        padding: 1em 0;
+    }
     small{
         text-transform: uppercase;
         font-weight: bolder;
@@ -79,6 +82,9 @@ div.product-details{
         font-weight: 900;
         font-size: 2.3rem;
         margin: 0.3em 0;
+        @include mQ(800px){
+            font-size: calc(1.325rem + .9vw);
+        }
     }
     .product-details-text{
         margin: 2em 0;
@@ -86,6 +92,9 @@ div.product-details{
         font-size: .75rem;
         font-weight: 600;
         color: hsl(220, 7%, 56%);
+        @include mQ(800px){
+            font-size: 0.6rem;
+        }
     }
     span{
         display: flex;
@@ -96,6 +105,9 @@ div.product-details{
             font-size: 1.5rem;
             color: #000;
             font-weight: 900;
+            @include mQ(800px){
+                font-size: 1.2rem;
+            }
         }
         p:nth-child(2){
             margin: 0 1em;
@@ -112,6 +124,9 @@ div.product-details{
         font-weight: 900;
         text-decoration: line-through;
         color: $grayishBlue;
+        @include mQ(800px){
+            font-size: 0.9rem;
+        }
     }
     
 }
@@ -120,6 +135,9 @@ div.product-details{
     display: flex;
     margin: 2em 0;
     justify-content: space-between;
+    @include mQ(800px){
+        margin: 1em 0;
+    }
 }
 
 div.number-of-product{
@@ -129,10 +147,17 @@ div.number-of-product{
     width: 40%;
     border-radius: 10px;
     background-color: $lightGrayishBlue;
+    @include mQ(800px){
+        height: 45px;
+    }
     p{
         margin: 0;
         font-weight: 900;
         font-size: 1.3rem;
+        @include mQ(800px){
+            font-size: 1.1rem;
+            line-height: .9;
+        }
     }
 }
 
@@ -165,6 +190,11 @@ div.add-to-cart-btn{
         font-weight: 800;
         border-radius: 10px;
         transition: all .2s linear;
+        @include mQ(800px){
+            padding: 1em 1.3em;
+            font-size: 0.8rem;
+            justify-content: space-around;
+        }
         &:hover{
             opacity: .6;
         }
