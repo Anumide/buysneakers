@@ -102,6 +102,9 @@ div.navLinks{
                     transition: height .3s ease-in-out;
                     background: $orange;
                     top: 4em;
+                    @include mQ(800px){
+                        top: 3.4em;
+                    }
                 }
                 &:hover::before{
                     height: 4px;

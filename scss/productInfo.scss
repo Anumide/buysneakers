@@ -282,6 +282,9 @@ div.add-to-cart-btn{
     width: 400px;
     height: 50%;
     margin: 15vh auto;
+    @include mQ(800px){
+        width: 300px;
+    }
 }
 
 .carousel-inner{
@@ -303,19 +306,40 @@ div.add-to-cart-btn{
         line-height: 2.7;
         position: absolute;
         top: 140px; 
+        @include mQ(800px){
+            width: 2.5rem;
+            height: 2.5rem;
+            top: 90px;
+            line-height: 2.3;
+        }
         svg{
             stroke: #1D2026;
             transition: stroke 200ms linear;
+            @include mQ(800px){
+                width: 28%;
+            }
         }
+    }
+}
+
+button.carousel-control-prev.carousel-btn.carousel-prev-btn > span.carousel-control-prev-icon > svg{
+    @include mQ(800px){
+        width: 40%;
     }
 }
 
 .carousel-prev-btn{
     left: -1.8em;
+    @include mQ(800px){
+        left: -1.4em
+    }
 }
 
 .carousel-next-btn{
     right: -1.7em;
+    @include mQ(800px){
+        right: -1.4em
+    }
 }
 
 .close-btn{
