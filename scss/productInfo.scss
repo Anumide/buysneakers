@@ -11,6 +11,19 @@ div.product-info{
         margin: 5em 2em;
         width: 90%;
     }
+    @include mQ(450px){
+        margin: 0;
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 0;
+    }
+}
+
+div.product-image{
+    @include mQ(450px){
+        display: none;
+    }
 }
 
 div.main-image{
@@ -251,8 +264,47 @@ div.add-to-cart-btn{
     }
 }
 
+// design for mobile carousel
+.mobileCarousel{
+    display: none;
+    @include mQ(450px){
+        display: block;
+    }
+}
 
-// design for design carousel
+.mobileCarousel .carousel-inner{
+    border-radius: 0;
+}
+
+.mobileCarousel button[class^='carousel-control']{
+    color: white;
+    opacity: .9;
+    &:hover svg{
+        stroke: $orange;
+    }
+}
+
+.mobile-carousel-span{
+    width: 3rem;
+    height: 3rem;
+    background-color: $white;
+    border-radius: 50%;
+    line-height: 2.7;
+    svg{
+        stroke: #1D2026;
+        transition: stroke 200ms linear;
+    }
+}
+
+.mobile-carousel-button-prev{
+    left: 0.5em;
+}
+
+.mobile-carousel-button-next{
+    right: 0.5em;
+}
+
+// design for product carousel
 
 .hidden{
     visibility: hidden;

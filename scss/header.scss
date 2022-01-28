@@ -9,6 +9,10 @@ body{
     scroll-behavior: smooth;
 }
 
+.container{
+    padding: 0;
+}
+
     // header section
 header{
     padding: 2em 0;
@@ -18,7 +22,7 @@ header{
     }
     @include mQ(450px){
         border-bottom: none;
-        padding: 0.5em;
+        padding: 0.5em 1em;
         display: flex;
         align-items: center;
         justify-content: space-between;
