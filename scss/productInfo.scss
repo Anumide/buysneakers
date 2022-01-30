@@ -155,6 +155,9 @@ div.product-details{
             display: inline-block;
             position: absolute;
             right: 6%;
+            top: 51%;
+        }
+        @include mQ(400px){
             top: 56%;
         }
         @include mQ(325px){
@@ -249,13 +252,13 @@ div.add-to-cart-btn{
             justify-content: space-around;
         }
         @include mQ(650px){
-            padding: 1em 9em;
+            padding: 1em 10em;
         }
         @include mQ(400px){
-            padding: 1em 7em;
+            padding: 1em 7.5em;
         }
         @include mQ(325px){
-            padding: 1em 4em;
+            padding: 1em 5.5em;
         }
         &:hover{
             opacity: .6;
