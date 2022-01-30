@@ -266,6 +266,9 @@ div.add-to-cart-btn{
             @include mQ(650px){
                 width: 30%;
             }
+            @include mQ(325px){
+                width: 15%;
+            }
         }
     }
 }
