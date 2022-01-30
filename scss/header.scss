@@ -217,6 +217,11 @@ div.profile{
     height: 8%;
     transition: transform 200ms linear;
     transform: translateX(350px);
+    z-index: 1;
+    @include mQ(450px){
+        width: 8%;
+        right: 2%;
+    }
     &:hover svg, &:active svg{
         stroke: #eee;
     }
