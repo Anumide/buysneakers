@@ -157,6 +157,9 @@ div.product-details{
             right: 6%;
             top: 56%;
         }
+        @include mQ(325px){
+            top: 55%;
+        }
     }
     
 }
@@ -252,7 +255,7 @@ div.add-to-cart-btn{
             padding: 1em 9em;
         }
         @include mQ(325px){
-            padding: 1em 7em;
+            padding: 1em 6em;
         }
         &:hover{
             opacity: .6;
