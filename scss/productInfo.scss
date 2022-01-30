@@ -11,7 +11,7 @@ div.product-info{
         margin: 5em 2em;
         width: 90%;
     }
-    @include mQ(450px){
+    @include mQ(650px){
         margin: 0;
         width: 100%;
         grid: none;
@@ -20,7 +20,7 @@ div.product-info{
 }
 
 div.product-image{
-    @include mQ(450px){
+    @include mQ(650px){
         display: none;
     }
 }
@@ -82,7 +82,7 @@ div.product-details{
     @include mQ(800px){
         padding: 1em 0;
     }
-    @include mQ(450px){
+    @include mQ(650px){
         padding: 1em;
         position: relative
     }
@@ -101,7 +101,7 @@ div.product-details{
         @include mQ(800px){
             font-size: calc(1.325rem + .9vw);
         }
-        @include mQ(450px){
+        @include mQ(650px){
             width: 90%;
             font-size: 1.8rem;
         }
@@ -115,7 +115,7 @@ div.product-details{
         @include mQ(800px){
             font-size: 0.6rem;
         }
-        @include mQ(450px){
+        @include mQ(650px){
             font-size: .8rem;
             margin: 1.5em 0;
         }
@@ -151,14 +151,14 @@ div.product-details{
         @include mQ(800px){
             font-size: 0.9rem;
         }
-        @include mQ(450px){
+        @include mQ(650px){
             display: inline-block;
             position: absolute;
             right: 6%;
             top: 56%;
         }
         @include mQ(325px){
-            top: 55%;
+            top: 54%;
         }
     }
     
@@ -171,7 +171,7 @@ div.product-details{
     @include mQ(800px){
         margin: 1em 0;
     }
-    @include mQ(450px){
+    @include mQ(650px){
         flex-direction: column;
     }
 }
@@ -186,7 +186,7 @@ div.number-of-product{
     @include mQ(800px){
         height: 45px;
     }
-    @include mQ(450px){
+    @include mQ(650px){
         width: 100%;
         margin: 0.5em 0;
     }
@@ -198,7 +198,7 @@ div.number-of-product{
             font-size: 1.1rem;
             line-height: .9;
         }
-        @include mQ(450px){
+        @include mQ(650px){
             font-size: 1.5rem;
             line-height: .5;
         }
@@ -220,7 +220,7 @@ div.number-of-product > p:nth-child(1):hover, div.number-of-product > p:nth-chil
 }
 
 div.number-of-product > p:nth-child(2){
-    @include mQ(450px){
+    @include mQ(650px){
         line-height: .9;
     }
 }
@@ -248,14 +248,14 @@ div.add-to-cart-btn{
             font-size: 0.8rem;
             justify-content: space-around;
         }
-        @include mQ(450px){
+        @include mQ(650px){
             padding: 1em 11em;
         }
         @include mQ(400px){
             padding: 1em 9em;
         }
         @include mQ(325px){
-            padding: 1em 6em;
+            padding: 1em 5em;
         }
         &:hover{
             opacity: .6;
@@ -263,7 +263,7 @@ div.add-to-cart-btn{
         svg{
             width: 23%;
             fill: $white;
-            @include mQ(450px){
+            @include mQ(650px){
                 width: 30%;
             }
         }
@@ -319,7 +319,7 @@ div.add-to-cart-btn{
 // design for mobile carousel
 .mobileCarousel{
     display: none;
-    @include mQ(450px){
+    @include mQ(650px){
         display: block;
     }
 }

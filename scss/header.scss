@@ -20,7 +20,7 @@ header{
     @include mQ(800px){
         padding: 1.5em 0;
     }
-    @include mQ(450px){
+    @include mQ(650px){
         border-bottom: none;
         padding: 0.5em 1em;
         display: flex;
@@ -33,7 +33,7 @@ header{
     // navigation
 header nav{
     display: flex;
-    @include mQ(450px){
+    @include mQ(650px){
         justify-content: space-between;
         width: 90%;
     }
@@ -41,7 +41,7 @@ header nav{
 
 div.hamburger{
     display: none;
-    @include mQ(450px){
+    @include mQ(650px){
         display: inline-block;
         cursor: pointer;
         margin-top: 2px;
@@ -59,7 +59,7 @@ div.logo{
     @include mQ(800px){
         width: 17%;
     }
-    @include mQ(450px){
+    @include mQ(650px){
         width: 40%;
     }
     img{
@@ -73,7 +73,7 @@ div.navLinks{
     flex-grow: 1;
     display: flex;
     align-items: flex-end;
-    @include mQ(450px){
+    @include mQ(650px){
         display: none;
     }
     ul{
@@ -126,7 +126,7 @@ div.cartProfile{
     @include mQ(800px){
         width: 13%;
     }
-    @include mQ(450px){
+    @include mQ(650px){
         width: 25%;
     }
 }
@@ -190,7 +190,7 @@ div.profile{
     border-radius: 50%;
     transition: border .3s linear;
     cursor: pointer;
-    @include mQ(450px){
+    @include mQ(650px){
         width: 42%;
     }
     &:hover{
@@ -218,7 +218,7 @@ div.profile{
     transition: transform 200ms linear;
     transform: translateX(350px);
     z-index: 1;
-    @include mQ(450px){
+    @include mQ(650px){
         width: 8%;
         right: 2%;
     }
