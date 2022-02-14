@@ -234,34 +234,21 @@ div.add-to-cart-btn{
         width: 100%;
     }
     button{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: $orange;
-        border: none;
-        padding: 1em 2em;
-        width: 100%;
-        letter-spacing: .05em;
-        color: $white;
-        font-weight: 800;
-        border-radius: 10px;
-        transition: all .2s linear;
-        @include mQ(800px){
-            padding: 1em 1.3em;
-            font-size: 0.8rem;
-            justify-content: space-around;
-        }
-        @include mQ(650px){
-            padding: 1em 10em;
-        }
-        @include mQ(400px){
-            padding: 1em 7.5em;
-        }
-        @include mQ(325px){
-            padding: 1em 5.5em;
-        }
-        &:hover{
-            opacity: .6;
+        @include btn{
+            @include mQ(800px){
+                padding: 1em 1.3em;
+                font-size: 0.8rem;
+                justify-content: space-around;
+            }
+            @include mQ(650px){
+                padding: 1em 10em;
+            }
+            @include mQ(400px){
+                padding: 1em 7.5em;
+            }
+            @include mQ(325px){
+                padding: 1em 5.5em;
+            }
         }
         svg{
             width: 23%;

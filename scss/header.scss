@@ -176,8 +176,8 @@ div.cart{
     border-radius: 30%;
     font-size: 0.7rem;
     text-align: center;
-    opacity: 1;
-    transition: opacity 400ms linear;
+    opacity: 0;
+    transition: all 400ms linear;
     @include mQ(800px){
         top: -0.3em;
         right: -1em;
@@ -260,11 +260,12 @@ div.profile{
     background: #fff;
     position: absolute;
     top: 90%;
-    right: -3vw;
-    z-index: 10;
+    right: -3%;
+    z-index: -10;
     box-shadow: 0 11px 20px 0px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     height: 200%;
+    opacity: 0;
     //height is auto when there's item in the cart
     //height: auto;
     @include mQ(1100px){
@@ -307,13 +308,16 @@ div.profile{
 
 .close-cart{
     animation: scale-out 400ms ease-in-out forwards;
-    transform-origin: top;
+    transform-origin: top right;
     opacity: 0;
+    z-index: 10;
+    pointer-events: none;
 }
 
 .open-cart{
     animation: scale-in 400ms ease-in-out forwards;
-    transform-origin: top;
+    transform-origin: top right;
+    z-index: 10;
 }
 
 
@@ -511,4 +515,4 @@ div.profile{
         transform: rotateX(60deg) scale(3);
         filter: blur(10px);
     }
-}
+}   

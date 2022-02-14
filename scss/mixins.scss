@@ -1,5 +1,28 @@
+// media query
 @mixin mQ($arg) {
     @media screen and (max-width: $arg) {
         @content
     }
 }
+
+
+//  button and hover effect
+@mixin btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $orange;
+        border: none;
+        padding: 1em 2em;
+        width: 100%;
+        letter-spacing: .05em;
+        color: $white;
+        font-weight: 800;
+        border-radius: 10px;
+        transition: all .2s linear;
+        @content;
+        &:hover{
+            opacity: .6;
+        }
+}
+
