@@ -1,11 +1,41 @@
 @import 'variable';
 @import 'mixins';
 
+// design for scrollbar
+::-webkit-scrollbar{
+    width: 10px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track{
+    background: #EDE1D7;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: $orange;
+    border-radius: 10px;
+    border: 1px solid #EDE1D7;
+    &:hover{
+        background: #db6104;
+    }
+}
+
+// for al browser support
+@supports (scrollbar-color: red blue){
+    *{
+        scrollbar-color: #EDE1D7 $orange ;
+        scrollbar-width: thin;
+    }
+}
+
+
+
 *{
     font-family: 'Kumbh Sans', sans-serif;;
 }
 
-body{
+body, .cart-parent, .cart_content{
     scroll-behavior: smooth;
 }
 
@@ -265,7 +295,7 @@ div.profile{
     box-shadow: 0 11px 20px 0px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     height: 200%;
-    opacity: 0;
+    opacity: 1;
     //height is auto when there's item in the cart
     //height: auto;
     @include mQ(1100px){
@@ -307,7 +337,7 @@ div.profile{
 }
 
 .close-cart{
-    animation: scale-out 400ms ease-in-out forwards;
+    animation: scale-out 400ms ease-in-out;
     transform-origin: top right;
     opacity: 0;
     z-index: 10;
@@ -315,7 +345,7 @@ div.profile{
 }
 
 .open-cart{
-    animation: scale-in 400ms ease-in-out forwards;
+    animation: scale-in 400ms ease-in-out;
     transform-origin: top right;
     z-index: 10;
 }
