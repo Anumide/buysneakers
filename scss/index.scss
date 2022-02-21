@@ -1,5 +1,91 @@
 @import 'variable';
 @import 'header';
+@import 'mixins';
+
+@mixin box-grid {
+    position: relative;
+    display: flex;
+    align-items: end;
+    > div{
+        position: absolute;
+        width: 100%;
+        background: linear-gradient(transparent, #000);
+        @content;
+    }
+}
+
+// function for setting grid-area
+@each $name in $names{
+    .#{$name}-collection{
+        grid-area: #{$name};
+        background-image: url("../images/#{$name}-product-4.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        @include box-grid
+    }
+}
+
+.collection{
+    display: grid;
+    gap: 15px;
+    padding: 1em 3em;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+    "product addidas addidas addidas"
+    "product addidas addidas addidas"
+    "product addidas addidas addidas"
+    "product addidas addidas addidas"
+    "product nike newbalance newbalance"
+    "product nike newbalance newbalance"
+    "product nike newbalance newbalance"
+    "product nike vans vans"
+    "puma nike vans vans"
+    "puma nike vans vans"
+    "puma nike vans vans";
+    @include mQ(800px){
+        padding-inline: 1em;
+    }
+}
 
 
 
+.product-collection{
+    background-image: url(../images/image-product-4.jpg);
+    height: 28em;
+    @include mQ(1100px){
+        height: 24em;
+    }
+    @include mQ(800px){
+        height: 21em;
+    }
+}
+
+.nike-collection{
+
+}
+
+.addidas-collection{
+    background-position: 50% 40%;
+}
+
+.puma-collection{
+    height: 14em;
+    @include mQ(1100px){
+        height: 12em;
+    }
+    @include mQ(800px){
+        height: 11em;
+    }
+}
+
+.newbalance-collection{
+    background-position: 50% 60%;
+    @include mQ(800px){
+        height: 9em;
+    }
+}
+
+.vans-collection{
+    background-position: 50% 30%;
+}
