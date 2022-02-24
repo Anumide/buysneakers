@@ -22,13 +22,17 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        @include box-grid
+        @include box-grid;
+        @include mQ(650px){
+            height: 15em;
+            margin-block: 1em ;
+        }
     }
 }
 
 .collection{
     display: grid;
-    gap: 15px;
+    gap: 5px;
     padding: 1em 3em;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
@@ -43,8 +47,9 @@
     "puma nike vans vans"
     "puma nike vans vans"
     "puma nike vans vans";
-    @include mQ(800px){
+    @include mQ(650px){
         padding-inline: 1em;
+        display: block;
     }
 }
 
@@ -59,6 +64,9 @@
     @include mQ(800px){
         height: 21em;
     }
+    @include mQ(650px){
+        height: 15em;
+    }
 }
 
 .nike-collection{
@@ -67,6 +75,12 @@
 
 .addidas-collection{
     background-position: 50% 40%;
+    @include mQ(800px){
+        height: 11em;
+    }
+    @include mQ(650px){
+        height: 15em;
+    }
 }
 
 .puma-collection{
@@ -75,7 +89,10 @@
         height: 12em;
     }
     @include mQ(800px){
-        height: 11em;
+        height: 10em;
+    }
+    @include mQ(650px){
+        height: 15em;
     }
 }
 
@@ -83,6 +100,9 @@
     background-position: 50% 60%;
     @include mQ(800px){
         height: 9em;
+    }
+    @include mQ(650px){
+        height: 15em;
     }
 }
 
