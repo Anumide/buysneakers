@@ -149,6 +149,65 @@ div.navLinks{
     }
 } 
 
+    // menu for mobile
+.mobile-menu-parent{
+    display: none;
+    @include mQ(650px){
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba($color: #000000, $alpha: .7);
+        z-index: 15;
+        width: 100%;
+        height: 100vh;
+    }
+} 
+
+
+.mobile-menu{
+    background-color: $white;
+    width: 70%;
+    height: 100%;
+    padding: 1em;
+}
+
+.mobileNavLinks{
+    margin-block: 2em;
+    ul{
+        list-style-type: none;
+        padding-left: 0;
+    }
+    li{
+        margin-block: 1em;
+    }
+    a{
+        text-decoration: none;
+        text-transform: capitalize;
+        color: $varkBlue;
+        font-weight: bolder;
+        transition: color 200ms; 
+        padding-block: 0.5em;   
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 6%;
+            bottom: 0;
+            background-color: $orange;
+            transition: all 400ms;
+        }
+        &:hover{
+            color: $orange;
+        }
+    }
+}
+
+.mobileActive{
+    color: $orange;
+}
+
     // cart and profile design
 div.cartProfile{
     display: flex;
