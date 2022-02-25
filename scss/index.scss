@@ -2,18 +2,6 @@
 @import 'header';
 @import 'mixins';
 
-@mixin box-grid {
-    position: relative;
-    display: flex;
-    align-items: end;
-    > div{
-        position: absolute;
-        width: 100%;
-        background: linear-gradient(transparent, #000);
-        @content;
-    }
-}
-
 // function for setting grid-area
 @each $name in $names{
     .#{$name}-collection{
@@ -22,7 +10,34 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        @include box-grid;
+        @include box-grid{
+            h2{
+                color: $white;
+                font-size: 2.2rem;
+                letter-spacing: .1rem;
+                margin-bottom: 0.6em;
+            }
+            p{
+                color: $white;
+                width: 90%;
+                margin: 0;
+            }
+            span{
+                color: $white;
+                margin-block: 0.5em;
+                display: inline-block;
+            }
+            .viewbtn{
+                button{
+                    @include btn{
+                        padding: 0.4em 0.6em;
+                        width: 35%;
+                        font-weight: 500;
+                        border-radius: 5px;
+                    };
+                }
+            }
+        };
         @include mQ(650px){
             height: 15em;
             margin-block: 1em ;
@@ -67,11 +82,16 @@
     @include mQ(650px){
         height: 15em;
     }
+    > div {
+        height: 60%;
+    }
 }
 
-// .nike-collection{
-
-// }
+.nike-collection{
+    div{
+        height: 60%;
+    }
+}
 
 .addidas-collection{
     background-position: 50% 40%;
@@ -80,6 +100,15 @@
     }
     @include mQ(650px){
         height: 15em;
+    }
+    div{
+        height: 100%;
+        p{
+            width: 70%;
+        }
+        .viewbtn{
+            width: 50%;
+        }
     }
 }
 
@@ -94,6 +123,11 @@
     @include mQ(650px){
         height: 15em;
     }
+    div{
+        h2{
+            margin-bottom: 0.4em;
+        }
+    }
 }
 
 .newbalance-collection{
@@ -104,8 +138,40 @@
     @include mQ(650px){
         height: 15em;
     }
+    div{
+        h2{
+            font-size: 1.6rem;
+            margin-bottom: 0.2em;
+        }
+        p{
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        span{
+            font-size: 0.9rem;
+        }
+        .viewbtn{ 
+            button{
+                padding: 0.3em 0.6em;
+            }
+        }
+    }
 }
 
 .vans-collection{
     background-position: 50% 30%;
+    div{
+        height: 90%;
+    }
+}
+
+@keyframes slide-up {
+    from{
+        transform: translateY(20px) rotateZ(-6deg);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0px) rotateZ(0deg);
+        opacity: 1;
+    }
 }
