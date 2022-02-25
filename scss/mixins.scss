@@ -52,7 +52,7 @@
         opacity: 0;
         transition: all 400ms;
         @content;
-        @include mQ(1200px){
+        @include mQ($tablet){
             padding: 0.5em;
         }
     }

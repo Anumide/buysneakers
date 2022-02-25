@@ -11,7 +11,7 @@
         background-repeat: no-repeat;
         background-position: center;
         @include box-grid{
-            @include mQ(650px){
+            @include mQ($mobile){
                 height: 67% !important;
             }
             h2{
@@ -19,10 +19,10 @@
                 font-size: 2.2rem;
                 letter-spacing: .1rem;
                 margin-bottom: 0.6em;
-                @include mQ(1200px){
+                @include mQ($desktop){
                     font-size: 2rem;
                 }
-                @include mQ(800px){
+                @include mQ($tablet){
                     font-size: 1.7rem;
                     margin-bottom: 0.4em;
                 }
@@ -32,11 +32,11 @@
                 width: 90%;
                 margin: 0;
                 transition-delay: 100ms;
-                @include mQ(1200px){
+                @include mQ($desktop){
                     width: 100%;
                     font-size: 0.9rem;
                 }
-                @include mQ(800px){
+                @include mQ($tablet){
                     font-size: 0.7rem;
                 }
             }
@@ -45,10 +45,10 @@
                 margin-block: 0.5em;
                 display: inline-block;
                 transition-delay: 150ms;
-                @include mQ(1200px){
+                @include mQ($desktop){
                     font-size: 0.9rem;
                 }
-                @include mQ(800px){
+                @include mQ($tablet){
                     font-size: 0.8rem;
                 }
             }
@@ -60,21 +60,21 @@
                         width: 35%;
                         font-weight: 500;
                         border-radius: 5px;
-                        @include mQ(1200px){
+                        @include mQ($desktop){
                             width: 51%;
                         }
-                        @include mQ(800px){
+                        @include mQ($tablet){
                             width: 65%;
                             font-size: 0.8em;
                         }
-                        @include mQ(650px){
+                        @include mQ($mobile){
                             width: 40%;
                         }
                     };
                 }
             }
         };
-        @include mQ(650px){
+        @include mQ($mobile){
             height: 15em;
             margin-block: 1em ;
         }
@@ -98,7 +98,7 @@
     "puma nike vans vans"
     "puma nike vans vans"
     "puma nike vans vans";
-    @include mQ(650px){
+    @include mQ($mobile){
         padding-inline: 1em;
         display: block;
     }
@@ -112,18 +112,18 @@
     @include mQ(1100px){
         height: 24em;
     }
-    @include mQ(800px){
+    @include mQ($tablet){
         height: 21em;
     }
-    @include mQ(650px){
+    @include mQ($mobile){
         height: 15em;
     }
     > div {
         height: 60%;
-        @include mQ(1200px){
+        @include mQ($desktop){
             height: 62%;
         }
-        @include mQ(800px){
+        @include mQ($tablet){
             height: 52%;
         }
     }
@@ -132,10 +132,10 @@
 .nike-collection{
     div{
         height: 54%;
-        @include mQ(1200px){
+        @include mQ($desktop){
             height: 55%;
         }
-        @include mQ(800px){
+        @include mQ($tablet){
             height: 54%;
         }
     }
@@ -143,30 +143,30 @@
 
 .addidas-collection{
     background-position: 50% 40%;
-    @include mQ(800px){
+    @include mQ($tablet){
         height: 11em;
     }
-    @include mQ(650px){
+    @include mQ($mobile){
         height: 15em;
     }
     > div{
         height: 100%;
-        @include mQ(1200px){
+        @include mQ($desktop){
             padding: 0.5em 1em;
         }
-        @include mQ(800px){
+        @include mQ($tablet){
             padding: 0.5em;
             height: 90%;
         }
         p{
             width: 70%;
-            @include mQ(650px){
+            @include mQ($mobile){
                 width: 100%;
             }
         }
         .viewbtn{
             width: 50%;
-            @include mQ(650px){
+            @include mQ($mobile){
                 width: 100%;
             }
         }
@@ -178,19 +178,19 @@
     @include mQ(1100px){
         height: 12em;
     }
-    @include mQ(800px){
+    @include mQ($tablet){
         height: 10em;
     }
-    @include mQ(650px){
+    @include mQ($mobile){
         height: 15em;
     }
     > div{
-        @include mQ(1200px){
+        @include mQ($desktop){
             padding: 0.5em;
         }
         h2{
             margin-bottom: 0.4em;
-            @include mQ(1200px){
+            @include mQ($desktop){
                 margin-bottom: 0.2em;
             }
         }
@@ -199,57 +199,57 @@
 
 .newbalance-collection{
     background-position: 50% 60%;
-    @include mQ(800px){
+    @include mQ($tablet){
         height: 9em;
     }
-    @include mQ(650px){
+    @include mQ($mobile){
         height: 15em;
     }
     > div{
         padding: 0.5em;
-        @include mQ(1200px){
+        @include mQ($desktop){
             padding: 0.2em;
         }
-        @include mQ(800px){
+        @include mQ($tablet){
             padding: 0.3em;
         }
         h2{
             font-size: 1.6rem;
             margin-bottom: 0.2em;
-            @include mQ(1200px){
+            @include mQ($desktop){
                 margin-bottom: 0;
             }
-            @include mQ(800px){
+            @include mQ($tablet){
                 margin-bottom: 0.2em;
             }
         }
         p{
             font-size: 0.9rem;
             line-height: 1.5;
-            @include mQ(1200px){
+            @include mQ($desktop){
                 line-height: 1.4;
                 font-size: 0.8rem;
             }
-            @include mQ(800px){
+            @include mQ($tablet){
                 font-size: 0.7rem;
             }
         }
         span{
             font-size: 0.9rem;
-            @include mQ(1200px){
+            @include mQ($desktop){
                 margin-block: 0em;
             }
-            @include mQ(800px){
+            @include mQ($tablet){
                 margin-block: 0.3em;
             }
         }
         .viewbtn{ 
             button{
                 padding: 0.3em 0.6em;
-                @include mQ(1200px){
+                @include mQ($desktop){
                     padding: 0.1em 0.6em;
                 }
-                @include mQ(800px){
+                @include mQ($tablet){
                     padding-block: 0.3em;
                 }
             }
@@ -261,14 +261,14 @@
     background-position: 50% 30%;
     div{
         height: 87%;
-        @include mQ(1200px){
+        @include mQ($desktop){
             height: 88%;
         }
-        @include mQ(800px){
+        @include mQ($tablet){
             height: 100%;
         }
         h2{
-            @include mQ(800px){
+            @include mQ($tablet){
                 margin-bottom: 0.2em;
             }
         }

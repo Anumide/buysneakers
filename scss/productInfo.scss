@@ -7,11 +7,11 @@ div.product-info{
     grid-auto-rows: minmax(100%, auto);
     grid-gap: 5em;
     margin: 5em;
-    @include mQ(1100px){
+    @include mQ($desktop){
         margin: 5em 2em;
         width: 90%;
     }
-    @include mQ(650px){
+    @include mQ($mobile){
         margin: 0;
         width: 100%;
         grid: none;
@@ -20,7 +20,7 @@ div.product-info{
 }
 
 div.product-image{
-    @include mQ(650px){
+    @include mQ($mobile){
         display: none;
     }
 }
@@ -35,10 +35,10 @@ div.main-image{
         object-fit: cover;
         height: 500px;
         //animation: fade-in 500ms linear;
-        @include mQ(1100px){
+        @include mQ($desktop){
             height: 328px;
         }
-        @include mQ(800px){
+        @include mQ($tablet){
             height: 270px;
         }
     }
@@ -54,10 +54,10 @@ div.thumbnail{
         overflow: hidden;
         margin: 0px 2.5%; 
         position: relative; 
-        @include mQ(1100px){
+        @include mQ($desktop){
             height: 78px;
         }
-        @include mQ(800px){
+        @include mQ($tablet){
             height: 57px;
         }
         &::before{
@@ -93,13 +93,13 @@ div.thumbnail > span:nth-child(4){
 
 div.product-details{
     padding: 5em 2em;
-    @include mQ(1100px){
+    @include mQ($desktop){
         padding: 2em 0;
     }
-    @include mQ(800px){
+    @include mQ($tablet){
         padding: 1em 0;
     }
-    @include mQ(650px){
+    @include mQ($mobile){
         padding: 1em;
         position: relative
     }
@@ -109,7 +109,7 @@ div.product-details{
         color: $orange;
         font-size: .8rem;
         letter-spacing: .1em;
-        @include mQ(800px){
+        @include mQ($tablet){
             font-size: 0.6rem;
         }
     }
@@ -118,10 +118,10 @@ div.product-details{
         font-weight: 900;
         font-size: 2.5rem;
         margin: 0.5em 0;
-        @include mQ(800px){
+        @include mQ($tablet){
             font-size: calc(1.325rem + .9vw);
         }
-        @include mQ(650px){
+        @include mQ($mobile){
             width: 90%;
             font-size: 1.8rem;
         }
@@ -133,11 +133,11 @@ div.product-details{
         font-size: .8rem;
         font-weight: 600;
         color: hsl(220, 7%, 56%);
-        @include mQ(800px){
+        @include mQ($tablet){
             font-size: 0.6rem;
             max-width: 95%;
         }
-        @include mQ(650px){
+        @include mQ($mobile){
             font-size: .8rem;
             margin: 1.5em 0;
         }
@@ -151,7 +151,7 @@ div.product-details{
             font-size: 1.5rem;
             color: #000;
             font-weight: 900;
-            @include mQ(800px){
+            @include mQ($tablet){
                 font-size: 1.2rem;
             }
         }
@@ -170,10 +170,10 @@ div.product-details{
         font-weight: 900;
         text-decoration: line-through;
         color: $grayishBlue;
-        @include mQ(800px){
+        @include mQ($tablet){
             font-size: 0.9rem;
         }
-        @include mQ(650px){
+        @include mQ($mobile){
             display: inline-block;
             position: absolute;
             right: 6%;
@@ -193,10 +193,10 @@ div.product-details{
     display: flex;
     margin: 2em 0;
     justify-content: space-between;
-    @include mQ(800px){
+    @include mQ($tablet){
         margin: 1em 0;
     }
-    @include mQ(650px){
+    @include mQ($mobile){
         flex-direction: column;
     }
 }
@@ -208,10 +208,10 @@ div.number-of-product{
     width: 40%;
     border-radius: 10px;
     background-color: $lightGrayishBlue;
-    @include mQ(800px){
+    @include mQ($tablet){
         height: 45px;
     }
-    @include mQ(650px){
+    @include mQ($mobile){
         width: 100%;
         margin: 0.5em 0;
     }
@@ -219,11 +219,11 @@ div.number-of-product{
         margin: 0;
         font-weight: 900;
         font-size: 1.3rem;
-        @include mQ(800px){
+        @include mQ($tablet){
             font-size: 1.1rem;
             line-height: .9;
         }
-        @include mQ(650px){
+        @include mQ($mobile){
             font-size: 1.5rem;
             line-height: .5;
         }
@@ -245,27 +245,27 @@ div.number-of-product > p:nth-child(1):hover, div.number-of-product > p:nth-chil
 }
 
 div.number-of-product > p:nth-child(2){
-    @include mQ(650px){
+    @include mQ($mobile){
         line-height: .9;
     }
 }
 
 div.add-to-cart-btn{
     width: 55%;
-    @include mQ(800px){
+    @include mQ($tablet){
         width: 60%;
     }
-    @include mQ(650px){
+    @include mQ($mobile){
         width: 100%;
     }
     button{
         @include btn{
-            @include mQ(800px){
+            @include mQ($tablet){
                 padding: 1em 1.3em;
                 font-size: 0.8rem;
                 justify-content: space-around;
             }
-            @include mQ(650px){
+            @include mQ($mobile){
                 padding: 1em 10em;
             }
             @include mQ(400px){
@@ -278,7 +278,7 @@ div.add-to-cart-btn{
         svg{
             width: 23%;
             fill: $white;
-            @include mQ(650px){
+            @include mQ($mobile){
                 width: 30%;
             }
             @include mQ(325px){
@@ -337,7 +337,7 @@ div.add-to-cart-btn{
 // design for mobile carousel
 .mobileCarousel{
     display: none;
-    @include mQ(650px){
+    @include mQ($mobile){
         display: block;
     }
 }
@@ -418,7 +418,7 @@ div.add-to-cart-btn{
     width: 400px;
     height: 50%;
     margin: 15vh auto;
-    @include mQ(800px){
+    @include mQ($tablet){
         width: 300px;
     }
 }
@@ -433,7 +433,7 @@ div.add-to-cart-btn{
         object-fit: cover;
         height: 430px;
        
-        @include mQ(800px){
+        @include mQ($tablet){
             height: 300px;
         }
     }
@@ -454,7 +454,7 @@ div.add-to-cart-btn{
         line-height: 2.7;
         position: absolute;
         top: 140px; 
-        @include mQ(800px){
+        @include mQ($tablet){
             width: 2.5rem;
             height: 2.5rem;
             top: 90px;
@@ -463,7 +463,7 @@ div.add-to-cart-btn{
         svg{
             stroke: #1D2026;
             transition: stroke 200ms linear;
-            @include mQ(800px){
+            @include mQ($tablet){
                 width: 28%;
             }
         }
@@ -471,21 +471,21 @@ div.add-to-cart-btn{
 }
 
 button.carousel-control-prev.carousel-btn.carousel-prev-btn > span.carousel-control-prev-icon > svg{
-    @include mQ(800px){
+    @include mQ($tablet){
         width: 40%;
     }
 }
 
 .carousel-prev-btn{
     left: -1.8em;
-    @include mQ(800px){
+    @include mQ($tablet){
         left: -1.4em
     }
 }
 
 .carousel-next-btn{
     right: -1.7em;
-    @include mQ(800px){
+    @include mQ($tablet){
         right: -1.4em
     }
 }
@@ -510,7 +510,7 @@ button.carousel-control-prev.carousel-btn.carousel-prev-btn > span.carousel-cont
     span{
         width: 22%;
         height: 85px;
-        @include mQ(800px){
+        @include mQ($tablet){
             height: 64px;
         }
     }

@@ -41,6 +41,9 @@ body, .cart-parent, .cart_content{
 
 .container{
     padding: 0;
+    @media screen and (min-width: 576px) and (max-width: 760px) {
+        max-width: 640px;
+    }
 }
 
     // header section
@@ -48,10 +51,10 @@ header{
     position: relative;
     padding: 2em 0;
     border-bottom: 1px solid #eee;
-    @include mQ(800px){
+    @include mQ($tablet){
         padding: 1.5em 0;
     }
-    @include mQ(650px){
+    @include mQ($mobile){
         border-bottom: none;
         padding: 0.5em 1em;
         display: flex;
@@ -64,7 +67,7 @@ header{
     // navigation
 header nav{
     display: flex;
-    @include mQ(650px){
+    @include mQ($mobile){
         justify-content: space-between;
         width: 90%;
     }
@@ -72,7 +75,7 @@ header nav{
 
 div.hamburger{
     display: none;
-    @include mQ(650px){
+    @include mQ($mobile){
         display: inline-block;
         cursor: pointer;
         margin-top: 2px;
@@ -87,10 +90,10 @@ div.hamburger{
     // design for logo
 div.logo{
     line-height: 2.5em;
-    @include mQ(800px){
+    @include mQ($tablet){
         width: 17%;
     }
-    @include mQ(650px){
+    @include mQ($mobile){
         width: 40%;
     }
     img{
@@ -104,13 +107,13 @@ div.navLinks{
     flex-grow: 1;
     display: flex;
     align-items: flex-end;
-    @include mQ(650px){
+    @include mQ($mobile){
         display: none;
     }
     ul{
         display: flex;
         align-items: center;
-        @include mQ(800px){
+        @include mQ($tablet){
             margin: 7px
         }
         li{
@@ -122,7 +125,7 @@ div.navLinks{
                 color: $grayishBlue;
                 font-weight: 500;
                 transition: color .3s, font-weight .2s;
-                @include mQ(800px){
+                @include mQ($tablet){
                     font-size: 0.85rem;
                 }
                 &:hover{
@@ -137,7 +140,7 @@ div.navLinks{
                     transition: height .3s ease-in-out;
                     background: $orange;
                     top: 4em;
-                    @include mQ(800px){
+                    @include mQ($tablet){
                         top: 3.4em;
                     }
                 }
@@ -152,7 +155,7 @@ div.navLinks{
     // menu for mobile
 .mobile-menu-parent{
     display: none;
-    @include mQ(650px){
+    @include mQ($mobile){
         display: none;
         position: fixed;
         top: 0;
@@ -229,10 +232,10 @@ div.cartProfile{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include mQ(800px){
+    @include mQ($tablet){
         width: 13%;
     }
-    @include mQ(650px){
+    @include mQ($mobile){
         width: 25%;
     }
 }
@@ -283,7 +286,7 @@ div.cart{
     text-align: center;
     opacity: 0;
     transition: all 400ms linear;
-    @include mQ(800px){
+    @include mQ($tablet){
         top: -0.3em;
         right: -1em;
         width: 80%;
@@ -297,7 +300,7 @@ div.profile{
     border-radius: 50%;
     transition: border .3s linear;
     cursor: pointer;
-    @include mQ(650px){
+    @include mQ($mobile){
         width: 42%;
     }
     &:hover{
@@ -325,10 +328,10 @@ div.profile{
     transition: transform 200ms linear;
     transform: translateX(350px);
     z-index: 1;
-    @include mQ(800px){
+    @include mQ($tablet){
         right: 2%;
     }
-    @include mQ(650px){
+    @include mQ($mobile){
         width: 8%;
         right: 2%;
     }
@@ -373,14 +376,14 @@ div.profile{
     opacity: 1;
     //height is auto when there's item in the cart
     //height: auto;
-    @include mQ(1100px){
+    @include mQ($desktop){
         width: 35%;
         right: -2vw;
     }
-    @include mQ(800px){
+    @include mQ($tablet){
         width: 40%;
     }
-    @include mQ(650px){
+    @include mQ($mobile){
         width: 95%;
         right: 0;
         top: 110%;
@@ -393,7 +396,7 @@ div.profile{
         margin-bottom: 0;
         padding: 0.5em 1em 1em;
         font-weight: 900;
-        @include mQ(800px){
+        @include mQ($tablet){
             font-size: 0.9rem;
         }
     }
@@ -404,7 +407,7 @@ div.profile{
         text-align: center;
         font-size: .9rem;
         font-weight: 900;
-        @include mQ(800px){
+        @include mQ($tablet){
             font-size: 0.8rem;
        }
     }
@@ -468,11 +471,11 @@ div.profile{
     width: 15%;
     overflow: hidden;
     border-radius: 8px;
-    @include mQ(800px){
+    @include mQ($tablet){
         width: 13%;
         border-radius: 5px;
     }
-    @include mQ(800px){
+    @include mQ($tablet){
         width: 15%;
     }
     img{
@@ -488,19 +491,19 @@ div.profile{
         font-size: 0.9rem;
         border-bottom: 0;
         margin: 0;
-        @include mQ(800px){
+        @include mQ($tablet){
             font-size: 0.8rem;
         }
-        @include mQ(800px){
+        @include mQ($tablet){
             font-size: 0.9rem;
         }
     }
     span{
         font-size: 0.8rem ;
-        @include mQ(800px){
+        @include mQ($tablet){
             font-size: 0.7rem;
         }
-        @include mQ(650px){
+        @include mQ($mobile){
             font-size: 0.8rem;
         }
     }
@@ -514,7 +517,7 @@ div.profile{
 .delete-btn{
     width: 5%;
     cursor: pointer;
-    @include mQ(650px){
+    @include mQ($mobile){
         width: 4%;
     }
     img{
@@ -525,7 +528,7 @@ div.profile{
 .checkout-btn{
     width: 90%;
     margin: 0.5em auto;
-    @include mQ(800px){
+    @include mQ($tablet){
         width: 95%;
     }
     button{
@@ -541,12 +544,12 @@ div.profile{
         font-weight: 800;
         border-radius: 10px;
         transition: all .2s linear;
-        @include mQ(800px){
+        @include mQ($tablet){
             padding: 1em 1.3em;
             font-size: 0.8rem;
             justify-content: space-around;
         }
-        @include mQ(650px){
+        @include mQ($mobile){
             padding: 1em 10em;
         }
         @include mQ(400px){
@@ -561,7 +564,7 @@ div.profile{
         svg{
             width: 23%;
             fill: $white;
-            @include mQ(650px){
+            @include mQ($mobile){
                 width: 30%;
             }
             @include mQ(325px){
