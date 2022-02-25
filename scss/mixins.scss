@@ -31,12 +31,30 @@
     position: relative;
     display: flex;
     align-items: end;
+    > div h2, > div p, > div span, > div .viewbtn{
+        transform: translateY(20px) rotateZ(-6deg);
+        opacity: 0;
+        transition: all 600ms;
+        transform-origin: center right;
+    }
+    &:hover > div{
+        opacity: 1;
+    }
+    &:hover > div h2,  &:hover > div p,  &:hover > div span,  &:hover > div .viewbtn{
+        transform: translateY(0px) rotateZ(0deg);
+        opacity: 1;
+    }
     > div{
         position: absolute;
         width: 100%;
-        background: linear-gradient(transparent, #000 75%);
+        background: linear-gradient(transparent, #000 65%);
         padding: 1em;
+        opacity: 0;
+        transition: all 400ms;
         @content;
+        @include mQ(1200px){
+            padding: 0.5em;
+        }
     }
 }
 

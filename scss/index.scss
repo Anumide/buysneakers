@@ -11,29 +11,65 @@
         background-repeat: no-repeat;
         background-position: center;
         @include box-grid{
+            @include mQ(650px){
+                height: 67% !important;
+            }
             h2{
                 color: $white;
                 font-size: 2.2rem;
                 letter-spacing: .1rem;
                 margin-bottom: 0.6em;
+                @include mQ(1200px){
+                    font-size: 2rem;
+                }
+                @include mQ(800px){
+                    font-size: 1.7rem;
+                    margin-bottom: 0.4em;
+                }
             }
             p{
                 color: $white;
                 width: 90%;
                 margin: 0;
+                transition-delay: 100ms;
+                @include mQ(1200px){
+                    width: 100%;
+                    font-size: 0.9rem;
+                }
+                @include mQ(800px){
+                    font-size: 0.7rem;
+                }
             }
             span{
                 color: $white;
                 margin-block: 0.5em;
                 display: inline-block;
+                transition-delay: 150ms;
+                @include mQ(1200px){
+                    font-size: 0.9rem;
+                }
+                @include mQ(800px){
+                    font-size: 0.8rem;
+                }
             }
             .viewbtn{
+                transition-delay: 200ms;
                 button{
                     @include btn{
                         padding: 0.4em 0.6em;
                         width: 35%;
                         font-weight: 500;
                         border-radius: 5px;
+                        @include mQ(1200px){
+                            width: 51%;
+                        }
+                        @include mQ(800px){
+                            width: 65%;
+                            font-size: 0.8em;
+                        }
+                        @include mQ(650px){
+                            width: 40%;
+                        }
                     };
                 }
             }
@@ -84,12 +120,24 @@
     }
     > div {
         height: 60%;
+        @include mQ(1200px){
+            height: 62%;
+        }
+        @include mQ(800px){
+            height: 52%;
+        }
     }
 }
 
 .nike-collection{
     div{
-        height: 60%;
+        height: 54%;
+        @include mQ(1200px){
+            height: 55%;
+        }
+        @include mQ(800px){
+            height: 54%;
+        }
     }
 }
 
@@ -101,13 +149,26 @@
     @include mQ(650px){
         height: 15em;
     }
-    div{
+    > div{
         height: 100%;
+        @include mQ(1200px){
+            padding: 0.5em 1em;
+        }
+        @include mQ(800px){
+            padding: 0.5em;
+            height: 90%;
+        }
         p{
             width: 70%;
+            @include mQ(650px){
+                width: 100%;
+            }
         }
         .viewbtn{
             width: 50%;
+            @include mQ(650px){
+                width: 100%;
+            }
         }
     }
 }
@@ -123,9 +184,15 @@
     @include mQ(650px){
         height: 15em;
     }
-    div{
+    > div{
+        @include mQ(1200px){
+            padding: 0.5em;
+        }
         h2{
             margin-bottom: 0.4em;
+            @include mQ(1200px){
+                margin-bottom: 0.2em;
+            }
         }
     }
 }
@@ -138,21 +205,53 @@
     @include mQ(650px){
         height: 15em;
     }
-    div{
+    > div{
+        padding: 0.5em;
+        @include mQ(1200px){
+            padding: 0.2em;
+        }
+        @include mQ(800px){
+            padding: 0.3em;
+        }
         h2{
             font-size: 1.6rem;
             margin-bottom: 0.2em;
+            @include mQ(1200px){
+                margin-bottom: 0;
+            }
+            @include mQ(800px){
+                margin-bottom: 0.2em;
+            }
         }
         p{
             font-size: 0.9rem;
             line-height: 1.5;
+            @include mQ(1200px){
+                line-height: 1.4;
+                font-size: 0.8rem;
+            }
+            @include mQ(800px){
+                font-size: 0.7rem;
+            }
         }
         span{
             font-size: 0.9rem;
+            @include mQ(1200px){
+                margin-block: 0em;
+            }
+            @include mQ(800px){
+                margin-block: 0.3em;
+            }
         }
         .viewbtn{ 
             button{
                 padding: 0.3em 0.6em;
+                @include mQ(1200px){
+                    padding: 0.1em 0.6em;
+                }
+                @include mQ(800px){
+                    padding-block: 0.3em;
+                }
             }
         }
     }
@@ -161,7 +260,18 @@
 .vans-collection{
     background-position: 50% 30%;
     div{
-        height: 90%;
+        height: 87%;
+        @include mQ(1200px){
+            height: 88%;
+        }
+        @include mQ(800px){
+            height: 100%;
+        }
+        h2{
+            @include mQ(800px){
+                margin-bottom: 0.2em;
+            }
+        }
     }
 }
 
