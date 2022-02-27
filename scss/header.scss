@@ -3,14 +3,9 @@
 
 // design for scrollbar
 ::-webkit-scrollbar{
-    width: 10px;
+    width: 8px;
     height: 5px;
-}
-
-::-webkit-scrollbar-track{
-    background: #EDE1D7;
-    border-radius: 10px;
-}
+} 
 
 ::-webkit-scrollbar-thumb{
     background: $orange;
@@ -28,7 +23,6 @@
         scrollbar-width: thin;
     }
 }
-
 
 
 *{

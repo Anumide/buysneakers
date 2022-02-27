@@ -9,7 +9,7 @@
     grid-auto-rows: minmax(50px, auto);
     padding: 5% 10px;
     grid-gap: 50px 10px;
-    @include mQ(650px){
+    @include mQ($mobile){
         display: inline-block;
     }
 }
@@ -34,13 +34,13 @@
 form.information{
     grid-column: 2/3;
     grid-row: 1/4;
-    @include mQ(650px){
+    @include mQ($mobile){
         margin: 2em 0;
     }
 }
 
 .location{
-    @include mQ(650px){
+    @include mQ($mobile){
         margin: 2em 0;
     }
     div{
@@ -66,7 +66,7 @@ form.information{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include mQ(650px){
+    @include mQ($mobile){
         margin: auto;
         width: 30%;
     }
