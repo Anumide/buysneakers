@@ -187,6 +187,7 @@ alexanderProductImage.addEventListener('click', (e) => {
     productCarousel.classList.remove('carousel-closed')
     productCarousel.classList.remove('hidden')
     productCarousel.classList.add('carousel-open')
+    document.body.style.overflowY = 'hidden'
 })
 
 //for balenciaga
@@ -194,6 +195,7 @@ balenciagaProductImage.addEventListener('click', ()=>{
     balenciagaCarousel.classList.remove('carousel-closed')
     balenciagaCarousel.classList.remove('hidden')
     balenciagaCarousel.classList.add('carousel-open')
+    document.body.style.overflowY = 'hidden'
 })
 
 //for offwhite
@@ -201,6 +203,7 @@ offWhiteProductImage.addEventListener('click', ()=>{
     offWhiteCarousel.classList.remove('carousel-closed')
     offWhiteCarousel.classList.remove('hidden')
     offWhiteCarousel.classList.add('carousel-open')
+    document.body.style.overflowY = 'hidden'
 })
 
 //for veja 
@@ -208,6 +211,7 @@ vejaProductImage.addEventListener('click', ()=>{
     vejaCarousel.classList.remove('carousel-closed')
     vejaCarousel.classList.remove('hidden')
     vejaCarousel.classList.add('carousel-open')
+    document.body.style.overflowY = 'hidden'
 })
 
 
@@ -222,6 +226,7 @@ closeCarousel.forEach(btn =>{
         offWhiteCarousel.classList.remove('carousel-open')
         vejaCarousel.classList.add('carousel-closed')
         vejaCarousel.classList.remove('carousel-open')
+        document.body.style.overflowY = 'auto'
     })    
 })
 // functionality for changing product image

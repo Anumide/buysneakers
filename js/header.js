@@ -32,10 +32,23 @@ cartbtn.addEventListener('click', () =>{
 
 // functionality for displaying menubar
 mobileMenu.addEventListener('click', () => {
+    mobileMenuContent.childNodes[1].setAttribute('class', 'mobile-menu slide-in')
     mobileMenuContent.style.display = "block"
+    document.body.style.overflowY = 'hidden'
 })
 
 closeMenu.addEventListener('click', () =>{
-    mobileMenuContent.style.display = "none"
+    mobileMenuContent.childNodes[1].setAttribute('class', 'mobile-menu slide-out')
+    setTimeout(() =>{
+        mobileMenuContent.style.display = "none"
+    }, 600)
+    document.body.style.overflowY = 'auto'
 })
 
+mobileMenuContent.addEventListener('click', () => {
+    mobileMenuContent.childNodes[1].setAttribute('class', 'mobile-menu slide-out')
+    setTimeout(() =>{
+        mobileMenuContent.style.display = "none"
+    }, 600)
+    document.body.style.overflowY = 'auto'
+})

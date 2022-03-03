@@ -81,11 +81,19 @@
     }
 }
 
-.collection{
+%gridIt{
     display: grid;
     gap: 5px;
     padding: 1em 3em;
     grid-template-columns: repeat(3, 1fr);
+    @include mQ($mobile){
+        padding: 0 1em;
+        display: block;
+    }
+}
+
+.collection{
+   @extend gridIt;
     grid-template-areas:
     "product addidas addidas addidas"
     "product addidas addidas addidas"
@@ -98,10 +106,23 @@
     "puma nike vans vans"
     "puma nike vans vans"
     "puma nike vans vans";
-    @include mQ($mobile){
-        padding-inline: 1em;
-        display: block;
-    }
+    
+}
+
+.femaleCollection{
+    @extend gridIt;
+    grid-template-areas:
+    "product addidas addidas addidas"
+    "product addidas addidas addidas"
+    "product addidas addidas addidas"
+    "product addidas addidas addidas"
+    "product nike newbalance newbalance"
+    "product nike newbalance newbalance"
+    "product nike newbalance newbalance"
+    "product nike vans vans"
+    "puma nike vans vans"
+    "puma nike vans vans"
+    "puma nike vans vans";
 }
 
 
@@ -130,7 +151,7 @@
 }
 
 .nike-collection{
-    div{
+    > div{
         height: 54%;
         @include mQ($desktop){
             height: 55%;
@@ -259,7 +280,7 @@
 
 .vans-collection{
     background-position: 50% 30%;
-    div{
+    > div{
         height: 87%;
         @include mQ($desktop){
             height: 88%;
@@ -272,6 +293,13 @@
                 margin-bottom: 0.2em;
             }
         }
+    }
+}
+
+h1{
+    margin: 1em;
+    @include mQ($mobile){
+        margin: 0.5em;
     }
 }
 

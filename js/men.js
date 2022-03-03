@@ -151,18 +151,21 @@ mainProductImage.addEventListener('click', (e) => {
     productCarousel.classList.remove('carousel-closed')
     productCarousel.classList.remove('hidden')
     productCarousel.classList.add('carousel-open')
+    document.body.style.overflowY = 'hidden'
 })
 
 nikeProductImage.addEventListener('click', (e) => {
     nikeCarousel.classList.remove('carousel-closed')
     nikeCarousel.classList.remove('hidden')
     nikeCarousel.classList.add('carousel-open')
+    document.body.style.overflowY = 'hidden'
 })
 
 addidasProductImage.addEventListener('click', (e) => {
     addidasCarousel.classList.remove('carousel-closed')
     addidasCarousel.classList.remove('hidden')
     addidasCarousel.classList.add('carousel-open')
+    document.body.style.overflowY = 'hidden'
 })
 
 closeCarousel.forEach(btn =>{
@@ -173,6 +176,7 @@ closeCarousel.forEach(btn =>{
         nikeCarousel.classList.remove('carousel-open')
         addidasCarousel.classList.add('carousel-closed')
         addidasCarousel.classList.remove('carousel-open')
+        document.body.style.overflowY = 'auto'
     })
 })
 
