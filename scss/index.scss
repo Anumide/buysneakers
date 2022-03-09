@@ -93,7 +93,7 @@
 }
 
 .collection{
-   @extend gridIt;
+   @extend %gridIt;
     grid-template-areas:
     "product addidas addidas addidas"
     "product addidas addidas addidas"
@@ -110,7 +110,7 @@
 }
 
 .femaleCollection{
-    @extend gridIt;
+    @extend %gridIt;
     grid-template-areas:
     "product addidas addidas addidas"
     "product addidas addidas addidas"

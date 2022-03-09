@@ -356,6 +356,13 @@ div.profile{
 
 }
 
+.height{
+    height: 200%;
+    @include mQ($mobile){
+        height: 500%;
+    }
+}
+
 //design for cart content
 .cart-parent{
     width: 30%;
@@ -366,10 +373,7 @@ div.profile{
     z-index: -10;
     box-shadow: 0 11px 20px 0px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
-    height: 200%;
     opacity: 1;
-    //height is auto when there's item in the cart
-    //height: auto;
     @include mQ($desktop){
         width: 35%;
         right: -2vw;
@@ -382,7 +386,6 @@ div.profile{
         right: 0;
         top: 110%;
         left: 2.5%;
-        height: 500%;
     }
     p.cart-text{
         text-transform: capitalize;
@@ -444,7 +447,9 @@ div.profile{
         bottom: 23%;
         z-index: 10;
         background: linear-gradient(360deg, black -150%, transparent 100%);
-
+        @include mQ($mobile){
+            bottom: 20%;
+        }
     }
 }
 
@@ -465,15 +470,18 @@ div.profile{
     width: 15%;
     overflow: hidden;
     border-radius: 8px;
+    height: 52px;
     @include mQ($tablet){
         width: 13%;
         border-radius: 5px;
+        height: 40px;
     }
-    @include mQ($tablet){
+    @include mQ($mobile){
         width: 15%;
     }
     img{
         width: 100%;
+        height: 100%;
     }
 }
 
@@ -488,7 +496,7 @@ div.profile{
         @include mQ($tablet){
             font-size: 0.8rem;
         }
-        @include mQ($tablet){
+        @include mQ($mobile){
             font-size: 0.9rem;
         }
     }
