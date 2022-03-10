@@ -60,10 +60,73 @@ let cartParent = document.querySelector('.cart-parent'),
     cartEmptyText = document.querySelector('.empty-cart-text'),
     cartCheckOutBtn = document.querySelector('.cart-content-checkout-btn'),
     cartContent = document.querySelector('.cart_content'),
-    numOfProduct = document.querySelector('.cart-number')
+    numOfProduct = document.querySelector('.cart-number'),
+    addToCartButton = document.querySelectorAll('.add-to-cart-btn')
     
 
+
+class ProductObj{
+    constructor(productImgSrc, productName, price){
+        this.productImgSrc = productImgSrc,
+        this.productName = productName,
+        this.price = price
+    }
+}
+
+
+
+
+let cartItem = []
+if(localStorage.cart){
+    cartItem = JSON.parse(localStorage.cart)
+}
+
+addToCartButton.forEach(element => {
+        // adding product to localStorage 
+    element.addEventListener('click', (e) => {
+        let productImgSrc = e.target.parentNode.parentNode.parentNode.parentNode.firstElementChild.firstElementChild.firstElementChild.getAttribute('src'),
+            productName = e.target.parentNode.parentNode.parentNode.children[1].textContent,
+            price = e.target.parentNode.parentNode.parentNode.children[3].firstElementChild.textContent,
+            reviewedPrice
+
     
+        cartItem.push(new ProductObj(productImgSrc, productName, price))
+        
+        localStorage.cart = JSON.stringify(cartItem)
+        cartItem = JSON.parse(localStorage.cart)
+        location.reload()
+        })
+})
+
+
+
+ // adding product to cart
+
+ function cartProductFunc(){
+    cartItem.forEach(ele => {
+        let cartProduct = document.createElement('div')
+        cartProduct.setAttribute('class', 'cart-product')
+        cartProduct.innerHTML = ` 
+        <div class="cart-product-image">
+            <img src="${ele.productImgSrc}" alt="">
+        </div>
+    
+        <div class="cart-product-details">
+            <p>${ele.productName}</p>
+            <span>$125.00 x <span>1</span></span>
+            <span class="reviewed-price">$${ele.reviewedPrice}.00</span>
+        </div>
+    
+        <div class="delete-btn">
+            <img src="./images/icon-delete.svg" alt="">
+        </div>`
+        cartContent.appendChild(cartProduct)
+        console.log(cartContent);
+    })
+ }
+ 
+cartProductFunc()
+
 
 if(cartContent.childElementCount >= 1){
     cartEmptyText.style.display = 'none'
@@ -74,4 +137,3 @@ if(cartContent.childElementCount >= 1){
     cartEmptyText.style.display = 'block'
     cartCheckOutBtn.style.display = 'none'
 }
-    

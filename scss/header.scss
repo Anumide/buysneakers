@@ -428,34 +428,56 @@ div.profile{
 
 .cart-content-checkout-btn{
     display: none;
-    padding: 0.5em 0;
-    position: relative;
-    &::before{
-        content: "";
-        height: 8%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        z-index: 10;
-        background: linear-gradient(180deg, black -150%, transparent 100%);
-    }
-    &::after{
-        content: "";
-        height: 8%;
-        width: 100%;
-        position: absolute;
-        bottom: 23%;
-        z-index: 10;
-        background: linear-gradient(360deg, black -150%, transparent 100%);
-        @include mQ($mobile){
-            bottom: 20%;
-        }
-    }
+    padding: 0 0 0.5em 0;
+    // position: relative;
+    // &::before{
+    //     content: "";
+    //     height: 8%;
+    //     width: 100%;
+    //     position: absolute;
+    //     top: 0;
+    //     z-index: 10;
+    //     background: linear-gradient(180deg, black -150%, transparent 100%);
+    // }
+    // &::after{
+    //     content: "";
+    //     height: 8%;
+    //     width: 100%;
+    //     position: absolute;
+    //     bottom: 23%;
+    //     z-index: 10;
+    //     background: linear-gradient(360deg, black -150%, transparent 100%);
+    //     @include mQ($tablet){
+    //         bottom: 20%;
+    //     }
+    // }
 }
 
 .cart_content{
     max-height: 250px;
     overflow-y: scroll;
+    // position: relative;
+    // &::before{
+    //     content: "";
+    //     height: 8%;
+    //     width: 100%;
+    //     position: absolute;
+    //     top: 0;
+    //     z-index: 10;
+    //     background: linear-gradient(180deg, black -150%, transparent 100%);
+    // }
+    // &::after{
+    //     content: "";
+    //     height: 8%;
+    //     width: 100%;
+    //     position: absolute;
+    //     bottom: 0;
+    //     z-index: 10;
+    //     background: linear-gradient(360deg, black -150%, transparent 100%);
+    //     @include mQ($mobile){
+    //         bottom: 20%;
+    //     }
+    // }
     //box-shadow: inset 0 -2em 3em rgba(0,0,0,0.1);
 }
 
@@ -467,17 +489,22 @@ div.profile{
 }
 
 .cart-product-image{
-    width: 15%;
+    width: 14%;
     overflow: hidden;
     border-radius: 8px;
-    height: 52px;
+    height: 48px;
+    @include mQ($desktop){
+        width: 15%;
+        height: 47px;
+    }
     @include mQ($tablet){
         width: 13%;
         border-radius: 5px;
-        height: 40px;
+        height: 35px;
     }
     @include mQ($mobile){
-        width: 15%;
+        width: 13%;
+        height: 48px;
     }
     img{
         width: 100%;
