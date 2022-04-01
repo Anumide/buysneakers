@@ -16,7 +16,7 @@
     }
 }
 
-// for al browser support
+// for all browser support
 @supports (scrollbar-color: red blue){
     *{
         scrollbar-color: #EDE1D7 $orange ;
@@ -56,6 +56,14 @@ header{
         justify-content: space-between;
 
     }
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+main{
+    animation: transitionIn 0.75s;
 }
 
     // navigation
@@ -633,7 +641,7 @@ div.profile{
 @keyframes scale-in {
     0%{
         opacity: 0;
-        transform: rotateX(60deg) scale(3);
+        transform: rotateX(60deg) scale(2);
     }
     100%{
         transform: rotateX(0deg) scale(1);
@@ -649,7 +657,7 @@ div.profile{
     }
     100%{
         opacity: 0;
-        transform: rotateX(60deg) scale(3);
+        transform: rotateX(60deg) scale(2);
         filter: blur(10px);
     }
 }   
@@ -673,5 +681,16 @@ div.profile{
     from{
         width: 70%;
         padding: 1em;
+    }
+}
+
+@keyframes transitionIn {
+    from{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
     }
 }

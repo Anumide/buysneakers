@@ -252,6 +252,9 @@ div.number-of-product > p:nth-child(2){
 
 div.add-to-cart-btn{
     width: 55%;
+    opacity: 0.6;
+    pointer-events: none;
+    transition: opacity 400ms;
     @include mQ($tablet){
         width: 60%;
     }
@@ -389,9 +392,9 @@ div.add-to-cart-btn{
 
 // design for product carousel
 
-.hidden{
-    visibility: hidden;
-}
+// .hidden{
+//     visibility: hidden;
+// }
 
 .carousel-closed{
     animation: fade-out 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;

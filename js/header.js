@@ -61,15 +61,32 @@ let cartParent = document.querySelector('.cart-parent'),
     cartCheckOutBtn = document.querySelector('.cart-content-checkout-btn'),
     cartContent = document.querySelector('.cart_content'),
     numOfProduct = document.querySelector('.cart-number'),
-    addToCartButton = document.querySelectorAll('.add-to-cart-btn')
-    
+    addToCartButton = document.querySelectorAll('.add-to-cart-btn'),
+    productImgSrc, productName, price, productNum, reviewedPrice, deleteBtn, cartProduct
+   
+    let numOfProductFunc = () => {
+        if(cartItem.length >= 1){
+            cartEmptyText.style.display = 'none'
+            cartCheckOutBtn.style.display = 'block'
+            cartParent.classList.remove('height')
+            numOfProduct.textContent = cartItem.length;
+            if(numOfProduct.textContent){
+                numOfProduct.style.opacity = '1'
+            }
+        } else{
+            cartParent.classList.add('height')
+            cartEmptyText.style.display = 'block'
+            cartCheckOutBtn.style.display = 'none'
+        }
+    }
 
 
 class ProductObj{
-    constructor(productImgSrc, productName, price){
+    constructor(productImgSrc, productName, price, productNum){
         this.productImgSrc = productImgSrc,
         this.productName = productName,
         this.price = price
+        this.productNum = productNum
     }
 }
 
@@ -77,63 +94,137 @@ class ProductObj{
 
 
 let cartItem = []
+//let cartArr = cartItem
 if(localStorage.cart){
     cartItem = JSON.parse(localStorage.cart)
 }
 
+cartItem.forEach(ele => {
+    let cartProduct = document.createElement('div')
+    cartProduct.setAttribute('class', 'cart-product')
+    cartProduct.innerHTML = ` 
+    <div class="cart-product-image">
+        <img src="${ele.productImgSrc}" alt="">
+    </div>
+
+    <div class="cart-product-details">
+        <p>${ele.productName}</p>
+        <span>$125.00 x <span>${ele.productNum}</span></span>
+        <span class="reviewed-price">$${ele.reviewedPrice}.00</span>
+    </div>
+
+    <div class="delete-btn">
+        <img src="./images/icon-delete.svg" alt="">
+    </div>`
+    cartContent.appendChild(cartProduct)
+    deleteBtn = cartProduct.lastElementChild
+    deleteBtn.addEventListener('click', (e) =>{
+        e.target.parentNode.parentNode.style.display = "none"
+        cartItem.splice(ele, 1)
+        let parseCart = JSON.parse(localStorage.cart)
+        parseCart.splice(ele, 1)
+        localStorage.cart = JSON.stringify(parseCart)
+        console.log(JSON.parse(localStorage.cart))
+        
+        if(cartItem.length >= 1){
+            cartEmptyText.style.display = 'none'
+            cartCheckOutBtn.style.display = 'block'
+            cartParent.classList.remove('height')
+            numOfProduct.textContent = cartItem.length;
+            if(numOfProduct.textContent){
+                numOfProduct.style.opacity = '1'
+            }
+        }  else if(cartItem.length >= 0){
+            cartParent.classList.add('height')
+            cartEmptyText.style.display = 'block'
+            cartCheckOutBtn.style.display = 'none'
+            numOfProduct.style.opacity = '0'
+        }else{
+            cartParent.classList.add('height')
+            cartEmptyText.style.display = 'block'
+            cartCheckOutBtn.style.display = 'none'
+        }
+    })
+})
+
 addToCartButton.forEach(element => {
         // adding product to localStorage 
     element.addEventListener('click', (e) => {
-        let productImgSrc = e.target.parentNode.parentNode.parentNode.parentNode.firstElementChild.firstElementChild.firstElementChild.getAttribute('src'),
-            productName = e.target.parentNode.parentNode.parentNode.children[1].textContent,
-            price = e.target.parentNode.parentNode.parentNode.children[3].firstElementChild.textContent,
+            productImgSrc = e.target.parentNode.parentNode.parentNode.parentNode.firstElementChild.firstElementChild.firstElementChild.getAttribute('src')
+            productName = e.target.parentNode.parentNode.parentNode.children[1].textContent
+            price = e.target.parentNode.parentNode.parentNode.children[3].firstElementChild.textContent
+            productNum = e.target.parentNode.previousElementSibling.firstElementChild.nextElementSibling.textContent
             reviewedPrice
-
-    
-        cartItem.push(new ProductObj(productImgSrc, productName, price))
+        cartItem.push(new ProductObj(productImgSrc, productName, price, productNum))
         
-        localStorage.cart = JSON.stringify(cartItem)
-        cartItem = JSON.parse(localStorage.cart)
-        location.reload()
-        })
-})
+         localStorage.cart = JSON.stringify(cartItem)
+         cartItem = JSON.parse(localStorage.cart)
 
-
-
- // adding product to cart
-
- function cartProductFunc(){
-    cartItem.forEach(ele => {
-        let cartProduct = document.createElement('div')
+        cartProduct = document.createElement('div')
         cartProduct.setAttribute('class', 'cart-product')
+       // cartProduct.setAttribute('id', cartItem.indexOf(ele))
         cartProduct.innerHTML = ` 
         <div class="cart-product-image">
-            <img src="${ele.productImgSrc}" alt="">
+            <img src="${cartItem[cartItem.length - 1].productImgSrc}" alt="">
         </div>
     
         <div class="cart-product-details">
-            <p>${ele.productName}</p>
-            <span>$125.00 x <span>1</span></span>
-            <span class="reviewed-price">$${ele.reviewedPrice}.00</span>
+            <p>${cartItem[cartItem.length - 1].productName}</p>
+            <span>$125.00 x <span>${cartItem[cartItem.length - 1].productNum}</span></span>
+            <span class="reviewed-price">$${cartItem[cartItem.length - 1].reviewedPrice}.00</span>
         </div>
     
         <div class="delete-btn">
             <img src="./images/icon-delete.svg" alt="">
         </div>`
+
         cartContent.appendChild(cartProduct)
-        console.log(cartContent);
+
+        
+        deleteBtn = cartProduct.lastElementChild
+        deleteBtn.addEventListener('click', (e) =>{
+            let clickTarget = e.target
+            clickTarget.parentNode.parentNode.style.display = "none"
+
+            cartItem = JSON.parse(localStorage.cart).splice(clickTarget, 1)
+            
+            if(cartItem.length >= 1){
+                cartEmptyText.style.display = 'none'
+                cartCheckOutBtn.style.display = 'block'
+                cartParent.classList.remove('height')
+                numOfProduct.textContent = cartItem.length;
+                if(numOfProduct.textContent){
+                    numOfProduct.style.opacity = '1'
+                }
+            }  else if(cartItem.length >= 0){
+                cartParent.classList.add('height')
+                cartEmptyText.style.display = 'block'
+                cartCheckOutBtn.style.display = 'none'
+                numOfProduct.style.opacity = '0'
+            }else{
+                cartParent.classList.add('height')
+                cartEmptyText.style.display = 'block'
+                cartCheckOutBtn.style.display = 'none'
+            }
+        })
+        
+        if(cartContent.childElementCount >= 1){
+            cartEmptyText.style.display = 'none'
+            cartCheckOutBtn.style.display = 'block'
+            cartParent.classList.remove('height')
+            numOfProduct.textContent = cartItem.length;
+            if(numOfProduct.textContent){
+                numOfProduct.style.opacity = '1'
+            }
+        } else{
+            cartParent.classList.toggle('height')
+            cartEmptyText.style.display = 'block'
+            cartCheckOutBtn.style.display = 'none'
+        }
     })
- }
- 
-cartProductFunc()
+})
 
 
-if(cartContent.childElementCount >= 1){
-    cartEmptyText.style.display = 'none'
-    cartCheckOutBtn.style.display = 'block'
-    numOfProduct.innerContent = cartContent.childElementCount;
-} else{
-    cartParent.classList.toggle('height')
-    cartEmptyText.style.display = 'block'
-    cartCheckOutBtn.style.display = 'none'
-}
+
+
+numOfProductFunc()

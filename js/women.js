@@ -111,14 +111,26 @@ for (let i = 0; i < vejaThumbnails.length; i++) {
         increaseNumFour = document.querySelector('#pos-4'),
         numOfOrderOne = document.querySelector('#num-1'),
         numOfOrderTwo = document.querySelector('#num-2'),
-        numOfOrderThree = document.querySelector('#num-3')
-        numOfOrderFour = document.querySelector('#num-4')
+        numOfOrderThree = document.querySelector('#num-3'),
+        numOfOrderFour = document.querySelector('#num-4'),
+        addToCart1 = document.querySelector('#add-to-cart1'),
+        addToCart2 = document.querySelector('#add-to-cart2'),
+        addToCart3 = document.querySelector('#add-to-cart3'),
+        addToCart4 = document.querySelector('#add-to-cart4')
 
         decreaseNumOne.addEventListener('click', () => {
   
             if (numOfOrderOne.textContent == 1 || numOfOrderOne.textContent == 0) {
                 decreaseNumOne.style.opacity = '.4'
                 numOfOrderOne.textContent = '0'
+                if(numOfOrderOne.textContent == '0'){
+                    addToCart1.style.opacity = '0.6'
+                    addToCart1.style.pointerEvents = 'none'
+                    console.log(true);
+                } else{
+                    addToCart1.style.opacity = '1'
+                    addToCart1.style.pointerEvents = 'all'
+                }
             }else{
                 decreaseNumOne.style.opacity = '1'
                 numOfOrderOne.textContent--
@@ -128,6 +140,14 @@ for (let i = 0; i < vejaThumbnails.length; i++) {
         increaseNumOne.addEventListener('click', (e) => {
             decreaseNumOne.style.opacity = '1'
             numOfOrderOne.textContent++
+            if(numOfOrderOne.textContent == '0'){
+                addToCart1.style.opacity = '0.6'
+                addToCart1.style.pointerEvents = 'none'
+                console.log(true);
+            } else{
+                addToCart1.style.opacity = '1'
+                addToCart1.style.pointerEvents = 'all'
+            }
         })
         
         
@@ -136,6 +156,13 @@ for (let i = 0; i < vejaThumbnails.length; i++) {
             if (numOfOrderTwo.textContent == 1 || numOfOrderTwo.textContent == 0) {
                 decreaseNumTwo.style.opacity = '.4'
                 numOfOrderTwo.textContent = '0'
+                if(numOfOrderTwo.textContent == '0'){
+                    addToCart2.style.opacity = '0.6'
+                    addToCart2.style.pointerEvents = 'none'
+                } else{
+                    addToCart2.style.opacity = '1'
+                    addToCart2.style.pointerEvents = 'all'
+                }
             }else{
                 decreaseNumTwo.style.opacity = '1'
                 numOfOrderTwo.textContent--
@@ -145,6 +172,13 @@ for (let i = 0; i < vejaThumbnails.length; i++) {
         increaseNumTwo.addEventListener('click', () => {
             decreaseNumTwo.style.opacity = '1'
             numOfOrderTwo.textContent++
+            if(numOfOrderTwo.textContent == '0'){
+                addToCart2.style.opacity = '0.6'
+                addToCart2.style.pointerEvents = 'none'
+            } else{
+                addToCart2.style.opacity = '1'
+                addToCart2.style.pointerEvents = 'all'
+            }
         })
         
         
@@ -153,6 +187,13 @@ for (let i = 0; i < vejaThumbnails.length; i++) {
             if (numOfOrderThree.textContent == 1 || numOfOrderThree.textContent == 0) {
                 decreaseNumThree.style.opacity = '.4'
                 numOfOrderThree.textContent = '0'
+                if(numOfOrderThree.textContent == '0'){
+                    addToCart3.style.opacity = '0.6'
+                    addToCart3.style.pointerEvents = 'none'
+                } else{
+                    addToCart3.style.opacity = '1'
+                    addToCart3.style.pointerEvents = 'all'
+                }
             }else{
                 decreaseNumThree.style.opacity = '1'
                 numOfOrderThree.textContent--
@@ -162,6 +203,13 @@ for (let i = 0; i < vejaThumbnails.length; i++) {
         increaseNumThree.addEventListener('click', () => {
             decreaseNumThree.style.opacity = '1'
             numOfOrderThree.textContent++
+            if(numOfOrderThree.textContent == '0'){
+                addToCart3.style.opacity = '0.6'
+                addToCart3.style.pointerEvents = 'none'
+            } else{
+                addToCart3.style.opacity = '1'
+                addToCart3.style.pointerEvents = 'all'
+            }
         })
 
         decreaseNumFour.addEventListener('click', () => {
@@ -169,6 +217,13 @@ for (let i = 0; i < vejaThumbnails.length; i++) {
             if (numOfOrderFour.textContent == 1 || numOfOrderFour.textContent == 0) {
                 decreaseNumFour.style.opacity = '.4'
                 numOfOrderFour.textContent = '0'
+                if(numOfOrderFour.textContent == '0'){
+                    addToCart4.style.opacity = '0.6'
+                    addToCart4.style.pointerEvents = 'none'
+                } else{
+                    addToCart4.style.opacity = '1'
+                    addToCart4.style.pointerEvents = 'all'
+                }
             }else{
                 decreaseNumFour.style.opacity = '1'
                 numOfOrderFour.textContent--
@@ -178,6 +233,13 @@ for (let i = 0; i < vejaThumbnails.length; i++) {
         increaseNumFour.addEventListener('click', () => {
             decreaseNumFour.style.opacity = '1'
             numOfOrderFour.textContent++
+            if(numOfOrderFour.textContent == '0'){
+                addToCart4.style.opacity = '0.6'
+                addToCart4.style.pointerEvents = 'none'
+            } else{
+                addToCart4.style.opacity = '1'
+                addToCart4.style.pointerEvents = 'all'
+            }
         })
 
 // functionality for carousel
