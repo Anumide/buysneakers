@@ -124,7 +124,6 @@ cartItem.forEach(ele => {
         let parseCart = JSON.parse(localStorage.cart)
         parseCart.splice(ele, 1)
         localStorage.cart = JSON.stringify(parseCart)
-        console.log(JSON.parse(localStorage.cart))
         
         if(cartItem.length >= 1){
             cartEmptyText.style.display = 'none'
@@ -160,6 +159,7 @@ addToCartButton.forEach(element => {
          localStorage.cart = JSON.stringify(cartItem)
          cartItem = JSON.parse(localStorage.cart)
 
+
         cartProduct = document.createElement('div')
         cartProduct.setAttribute('class', 'cart-product')
        // cartProduct.setAttribute('id', cartItem.indexOf(ele))
@@ -179,36 +179,37 @@ addToCartButton.forEach(element => {
         </div>`
 
         cartContent.appendChild(cartProduct)
-
-        
         deleteBtn = cartProduct.lastElementChild
         deleteBtn.addEventListener('click', (e) =>{
-            let clickTarget = e.target
-            clickTarget.parentNode.parentNode.style.display = "none"
-
-            cartItem = JSON.parse(localStorage.cart).splice(clickTarget, 1)
-            
-            if(cartItem.length >= 1){
-                cartEmptyText.style.display = 'none'
-                cartCheckOutBtn.style.display = 'block'
-                cartParent.classList.remove('height')
-                numOfProduct.textContent = cartItem.length;
-                if(numOfProduct.textContent){
-                    numOfProduct.style.opacity = '1'
+            e.target.parentNode.parentNode.style.display = "none"
+            for (let i = 0; i < cartItem.length; i++) {
+                const element = cartItem[i];
+                cartItem.splice(element, 1)
+                let parseCart = JSON.parse(localStorage.cart)
+                parseCart.splice(element, 1)
+                localStorage.cart = JSON.stringify(parseCart)
+                if(cartItem.length >= 1){
+                    cartEmptyText.style.display = 'none'
+                    cartCheckOutBtn.style.display = 'block'
+                    cartParent.classList.remove('height')
+                    numOfProduct.textContent = cartItem.length;
+                    if(numOfProduct.textContent){
+                        numOfProduct.style.opacity = '1'
+                    }
+                }  else if(cartItem.length >= 0){
+                    cartParent.classList.add('height')
+                    cartEmptyText.style.display = 'block'
+                    cartCheckOutBtn.style.display = 'none'
+                    numOfProduct.style.opacity = '0'
+                }else{
+                    cartParent.classList.add('height')
+                    cartEmptyText.style.display = 'block'
+                    cartCheckOutBtn.style.display = 'none'
                 }
-            }  else if(cartItem.length >= 0){
-                cartParent.classList.add('height')
-                cartEmptyText.style.display = 'block'
-                cartCheckOutBtn.style.display = 'none'
-                numOfProduct.style.opacity = '0'
-            }else{
-                cartParent.classList.add('height')
-                cartEmptyText.style.display = 'block'
-                cartCheckOutBtn.style.display = 'none'
+                break;                
             }
         })
-        
-        if(cartContent.childElementCount >= 1){
+        if(cartItem.length >= 1){
             cartEmptyText.style.display = 'none'
             cartCheckOutBtn.style.display = 'block'
             cartParent.classList.remove('height')
@@ -216,11 +217,17 @@ addToCartButton.forEach(element => {
             if(numOfProduct.textContent){
                 numOfProduct.style.opacity = '1'
             }
-        } else{
-            cartParent.classList.toggle('height')
+        }  else if(cartItem.length >= 0){
+            cartParent.classList.add('height')
+            cartEmptyText.style.display = 'block'
+            cartCheckOutBtn.style.display = 'none'
+            numOfProduct.style.opacity = '0'
+        }else{
+            cartParent.classList.add('height')
             cartEmptyText.style.display = 'block'
             cartCheckOutBtn.style.display = 'none'
         }
+    
     })
 })
 
