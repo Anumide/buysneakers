@@ -82,11 +82,12 @@ let cartParent = document.querySelector('.cart-parent'),
 
 
 class ProductObj{
-    constructor(productImgSrc, productName, price, productNum){
+    constructor(productImgSrc, productName, price, productNum, reviewedPrice){
         this.productImgSrc = productImgSrc,
         this.productName = productName,
-        this.price = price
-        this.productNum = productNum
+        this.price = price,
+        this.productNum = productNum,
+        this.reviewedPrice = reviewedPrice
     }
 }
 
@@ -109,7 +110,7 @@ cartItem.forEach(ele => {
 
     <div class="cart-product-details">
         <p>${ele.productName}</p>
-        <span>$125.00 x <span>${ele.productNum}</span></span>
+        <span>$${ele.price} x <span>${ele.productNum}</span></span>
         <span class="reviewed-price">$${ele.reviewedPrice}.00</span>
     </div>
 
@@ -151,10 +152,10 @@ addToCartButton.forEach(element => {
     element.addEventListener('click', (e) => {
             productImgSrc = e.target.parentNode.parentNode.parentNode.parentNode.firstElementChild.firstElementChild.firstElementChild.getAttribute('src')
             productName = e.target.parentNode.parentNode.parentNode.children[1].textContent
-            price = e.target.parentNode.parentNode.parentNode.children[3].firstElementChild.textContent
-            productNum = e.target.parentNode.previousElementSibling.firstElementChild.nextElementSibling.textContent
-            reviewedPrice
-        cartItem.push(new ProductObj(productImgSrc, productName, price, productNum))
+            price = parseInt(e.target.parentNode.parentNode.parentNode.children[3].firstElementChild.children[0].textContent)
+            productNum = parseInt(e.target.parentNode.previousElementSibling.firstElementChild.nextElementSibling.textContent)
+            reviewedPrice = price * productNum
+        cartItem.push(new ProductObj(productImgSrc, productName, price, productNum, reviewedPrice))
         
          localStorage.cart = JSON.stringify(cartItem)
          cartItem = JSON.parse(localStorage.cart)
@@ -170,8 +171,8 @@ addToCartButton.forEach(element => {
     
         <div class="cart-product-details">
             <p>${cartItem[cartItem.length - 1].productName}</p>
-            <span>$125.00 x <span>${cartItem[cartItem.length - 1].productNum}</span></span>
-            <span class="reviewed-price">$${cartItem[cartItem.length - 1].reviewedPrice}.00</span>
+            <span>$${price}.00 x ${cartItem[cartItem.length - 1].productNum}</span>
+            <span class="reviewed-price">$${cartItem[cartItem.length - 1].reviewedPrice}</strong>.00</span>
         </div>
     
         <div class="delete-btn">

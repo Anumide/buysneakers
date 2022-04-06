@@ -154,7 +154,6 @@ decreaseNumOne.addEventListener('click', () => {
         if(numOfOrderOne.textContent == '0'){
             addToCart1.style.opacity = '0.6'
             addToCart1.style.pointerEvents = 'none'
-            console.log(true);
         } else{
             addToCart1.style.opacity = '1'
             addToCart1.style.pointerEvents = 'all'
