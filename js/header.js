@@ -17,6 +17,9 @@ window.addEventListener('scroll', (e) => {
     }
 })
 
+// window.addEventListener('load', () => {
+// })
+
 // functionality for cart 
 cartbtn.addEventListener('click', () =>{
     if(cart.classList.contains('close-cart')){
@@ -236,3 +239,4 @@ addToCartButton.forEach(element => {
 
 
 numOfProductFunc()
+

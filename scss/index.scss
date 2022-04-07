@@ -2,7 +2,7 @@
 @import 'header';
 @import 'mixins';
 
-// function for setting grid-area
+// function for setting grid-area for men category
 @each $name in $names{
     .#{$name}-collection{
         grid-area: #{$name};
@@ -52,6 +52,9 @@
                     font-size: 0.8rem;
                 }
             }
+            a{
+                text-decoration: none;
+            }
             .viewbtn{
                 transition-delay: 200ms;
                 button{
@@ -80,6 +83,89 @@
         }
     }
 }
+
+// function for setting grid-area for women category
+@each $name in $womenNames{
+    .#{$name}-collection{
+        grid-area: #{$name};
+        background-image: url("../images/#{$name}-women-product-4.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        @include box-grid{
+            @include mQ($mobile){
+                height: 67% !important;
+            }
+            h2{
+                color: $white;
+                font-size: 2.2rem;
+                letter-spacing: .1rem;
+                margin-bottom: 0.6em;
+                @include mQ($desktop){
+                    font-size: 2rem;
+                }
+                @include mQ($tablet){
+                    font-size: 1.7rem;
+                    margin-bottom: 0.4em;
+                }
+            }
+            p{
+                color: $white;
+                width: 90%;
+                margin: 0;
+                transition-delay: 100ms;
+                @include mQ($desktop){
+                    width: 100%;
+                    font-size: 0.9rem;
+                }
+                @include mQ($tablet){
+                    font-size: 0.7rem;
+                }
+            }
+            span{
+                color: $white;
+                margin-block: 0.5em;
+                display: inline-block;
+                transition-delay: 150ms;
+                @include mQ($desktop){
+                    font-size: 0.9rem;
+                }
+                @include mQ($tablet){
+                    font-size: 0.8rem;
+                }
+            }
+            a{
+                text-decoration: none;
+            }
+            .viewbtn{
+                transition-delay: 200ms;
+                button{
+                    @include btn{
+                        padding: 0.4em 0.6em;
+                        width: 35%;
+                        font-weight: 500;
+                        border-radius: 5px;
+                        @include mQ($desktop){
+                            width: 51%;
+                        }
+                        @include mQ($tablet){
+                            width: 65%;
+                            font-size: 0.8em;
+                        }
+                        @include mQ($mobile){
+                            width: 40%;
+                        }
+                    };
+                }
+            }
+        };
+        @include mQ($mobile){
+            height: 15em;
+            margin-block: 1em ;
+        }
+    }
+}
+
 
 %gridIt{
     display: grid;
