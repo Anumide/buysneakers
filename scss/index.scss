@@ -73,7 +73,7 @@
                         @include mQ($mobile){
                             width: 40%;
                         }
-                    };
+                    }
                 }
             }
         };
@@ -172,10 +172,17 @@
     gap: 5px;
     padding: 1em 3em;
     grid-template-columns: repeat(3, 1fr);
+    @include mQ($tablet){
+        padding: 1em 1em;
+    }
     @include mQ($mobile){
         padding: 0 1em;
         display: block;
     }
+}
+
+main{
+    margin-bottom: 1em;
 }
 
 .collection{
@@ -198,17 +205,17 @@
 .femaleCollection{
     @extend %gridIt;
     grid-template-areas:
-    "product addidas addidas addidas"
-    "product addidas addidas addidas"
-    "product addidas addidas addidas"
-    "product addidas addidas addidas"
-    "product nike newbalance newbalance"
-    "product nike newbalance newbalance"
-    "product nike newbalance newbalance"
-    "product nike vans vans"
-    "puma nike vans vans"
-    "puma nike vans vans"
-    "puma nike vans vans";
+    "alexander balenciaga balenciaga balenciaga"
+    "alexander balenciaga balenciaga balenciaga"
+    "alexander balenciaga balenciaga balenciaga"
+    "gucci gucci converse converse"
+    "gucci gucci converse converse"
+    "gucci gucci converse converse"
+    "gucci gucci converse converse"
+    "gucci gucci converse converse"
+    "off-white veja converse converse"
+    "off-white veja converse converse"
+    "off-white veja converse converse";
 }
 
 
@@ -384,8 +391,124 @@
 
 h1{
     margin: 1em;
-    @include mQ($mobile){
+    @include mQ($tablet){
         margin: 0.5em;
+    }
+}
+
+.alexander-collection{
+    height: 17em;
+    @include mQ($desktop){
+        height: 15em;
+    }
+    @include mQ($tablet){
+        height: 10em;
+    }
+    @include mQ($mobile){
+        height: 15em;
+    }
+}
+
+.balenciaga-collection{
+    background-position: 50% 70%;
+    > div{
+        p{
+            max-width: 80%
+        }
+        button{
+            width: 25%!important;
+            @include mQ($desktop){
+                width: 30%!important;
+            }
+            @include mQ($mobile){
+                width: 40%!important;
+            }
+        }
+    }
+}
+
+.gucci-collection{
+    height: 20em;
+    @include mQ($desktop){
+        height: 14em;
+    }
+    @include mQ($tablet){
+        height: 10em;
+    }
+    @include mQ($mobile){
+        height: 15em;
+    }
+    > div{
+        p{
+            max-width: 80%
+        }
+        button{
+            width: 25%!important;
+            @include mQ($desktop){
+                width: 30%!important;
+            }
+            @include mQ($mobile){
+                width: 40%!important;
+            }
+        }
+    }
+}
+
+.off-white-collection{
+    height: 15em;
+    @include mQ($desktop){
+        height: 11em;
+    }
+    @include mQ($tablet){
+        height: 9em;
+    }
+    @include mQ($mobile){
+        height: 15em;
+    }
+    > div{
+        @include mQ($desktop){
+            padding: 0.2em;
+        }
+        @include mQ($mobile){
+            padding: 0.5em;
+        }
+        h2{
+            margin-bottom: 0.4em;
+            @include mQ($desktop){
+                margin-bottom: 0.1em;
+            }
+            @include mQ($tablet){
+                margin-bottom: 0;
+            }
+            @include mQ($mobile){
+                font-size: 1.7rem;
+                margin-bottom: 0.4em;
+            }
+        }
+    }
+}
+
+.veja-collection{
+    > div{
+        @include mQ($desktop){
+            padding: 0.2em;
+        }
+        @include mQ($mobile){
+            padding: 0.5em;
+        }
+        h2{
+            margin-bottom: 0.4em;
+            @include mQ($desktop){
+                margin-bottom: 0.1em;
+            }
+            @include mQ($tablet){
+                margin-bottom: 0;
+            }
+            @include mQ($mobile){
+                font-size: 1.7rem;
+                margin-bottom: 0.4em;
+            }
+        }
     }
 }
 
