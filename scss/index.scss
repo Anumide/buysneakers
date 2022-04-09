@@ -1,18 +1,21 @@
 @import 'variable';
-@import 'header';
 @import 'mixins';
+@import 'header';
 
 @function changeNum(){
-    @return math.random(4)
+    @return math.random(3)
 }
 
 
 
-// function for setting grid-area for men category
+
+
+
+
 @each $name in $names{
     .#{$name}-collection{
         grid-area: #{$name};
-        background-image: url("../images/#{$name}-product-#{$changeNum()}.jpg");
+        background-image: url("../images/#{$name}-product-changeNum().jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;

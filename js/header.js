@@ -18,9 +18,9 @@ window.addEventListener('scroll', (e) => {
     }
 })
 
-window.addEventListener('load', () => {
-    loader.classList.add('loaded')
-})
+// window.addEventListener('load', () => {
+//     loader.classList.add('loaded')
+// })
 
 // functionality for cart 
 cartbtn.addEventListener('click', () =>{
