@@ -6,6 +6,7 @@ let mobileMenu = document.querySelector('.hamburger')
 let mobileMenuContent = document.querySelector('.mobile-menu-parent')
 let closeMenu = document.querySelector('.close-menu')
 let cartImage = document.querySelector('.cart svg')
+let loader = document.querySelector('.loader')
 
 // back to top 
 window.addEventListener('scroll', (e) => {
@@ -17,8 +18,9 @@ window.addEventListener('scroll', (e) => {
     }
 })
 
-// window.addEventListener('load', () => {
-// })
+window.addEventListener('load', () => {
+    loader.classList.add('loaded')
+})
 
 // functionality for cart 
 cartbtn.addEventListener('click', () =>{

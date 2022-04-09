@@ -2,11 +2,17 @@
 @import 'header';
 @import 'mixins';
 
+@function changeNum(){
+    @return math.random(4)
+}
+
+
+
 // function for setting grid-area for men category
 @each $name in $names{
     .#{$name}-collection{
         grid-area: #{$name};
-        background-image: url("../images/#{$name}-product-4.jpg");
+        background-image: url("../images/#{$name}-product-#{$changeNum()}.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -83,6 +89,7 @@
         }
     }
 }
+
 
 // function for setting grid-area for women category
 @each $name in $womenNames{
@@ -166,7 +173,6 @@
     }
 }
 
-
 %gridIt{
     display: grid;
     gap: 5px;
@@ -180,6 +186,7 @@
         display: block;
     }
 }
+
 
 main{
     margin-bottom: 1em;
