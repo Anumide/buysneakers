@@ -8,6 +8,11 @@ let closeMenu = document.querySelector('.close-menu')
 let cartImage = document.querySelector('.cart svg')
 let loader = document.querySelector('.loader')
 
+// let loadLogo = document.querySelectorAll('#load-logo > path')
+// loadLogo.forEach(logo => {
+//     console.log(`${logo} length is ${logo.getTotalLength()}`);
+// })
+
 // back to top 
 window.addEventListener('scroll', (e) => {
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {

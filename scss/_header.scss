@@ -3,7 +3,7 @@
 
 // design for scrollbar
 ::-webkit-scrollbar{
-    width: 8px;
+    width: 5px;
     height: 5px;
 } 
 
@@ -54,15 +54,52 @@ body, .cart-parent, .cart_content{
     align-items: center;
 }
 
-#path-fill{
-    fill: $orange;
-    position: relative;
-    &::before{
-        position: absolute;
-        content: "";
-        width: 100%;
-        height: 100%;
-    }
+#load-logo > path:nth-child(2){
+    stroke-dasharray: 219.51681518554688;
+    stroke-dashoffset: 219.51681518554688;
+    animation: loading 3s ease-in forwards;
+}
+
+#load-logo > path:nth-child(3){
+    stroke-dasharray: 268.6590881347656;
+    stroke-dashoffset: 268.6590881347656;
+    animation: loading 3s 300ms ease-in forwards;
+}
+
+#load-logo > path:nth-child(4){
+    stroke-dasharray: 206.20701599121094;
+    stroke-dashoffset: 206.20701599121094;
+    animation: loading 3s 600ms ease-in forwards;
+}
+
+#load-logo > path:nth-child(5){
+    stroke-dasharray: 217.9075927734375;
+    stroke-dashoffset: 217.9075927734375;
+    animation: loading 3s 900ms ease-in forwards;
+}
+
+#load-logo > path:nth-child(6){
+    stroke-dasharray: 227.71209716796875;
+    stroke-dashoffset: 227.71209716796875;
+    animation: loading 3s 1200ms ease-in forwards;
+}
+
+#load-logo > path:nth-child(7){
+    stroke-dasharray: 206.20999145507812;
+    stroke-dashoffset: 206.20999145507812;
+    animation: loading 3s 1500ms ease-in forwards;
+}
+
+#load-logo > path:nth-child(8){
+    stroke-dasharray: 244.0299072265625;
+    stroke-dashoffset: 244.0299072265625;
+    animation: loading 3s 1800ms ease-in forwards;
+}
+
+#load-logo > path:nth-child(9){
+    stroke-dasharray: 219.51780700683594;
+    stroke-dashoffset: 219.51780700683594;
+    animation: loading 3s 2100ms ease-in forwards;
 }
 
 .loader.loaded{
@@ -728,5 +765,11 @@ div.profile{
     100%{
         opacity: 0;
         visibility: hidden;
+    }
+}
+
+@keyframes loading {
+    to{
+        stroke-dashoffset: 0;
     }
 }

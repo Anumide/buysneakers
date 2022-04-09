@@ -1,13 +1,18 @@
-@import 'variable';
-@import 'mixins';
+@use 'variable';
+@use 'mixins';
+@use "sass:math";
 @import 'header';
 
 @function changeNum(){
-    @return math.random(3)
+   @return math.random(4);
 }
 
 
 
+@debug changeNum();
+@debug changeNum();
+@debug changeNum();
+@debug changeNum();
 
 
 
@@ -15,7 +20,7 @@
 @each $name in $names{
     .#{$name}-collection{
         grid-area: #{$name};
-        background-image: url("../images/#{$name}-product-changeNum().jpg");
+        background-image: url("../images/#{$name}-product-#{$randomNum}.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -98,7 +103,7 @@
 @each $name in $womenNames{
     .#{$name}-collection{
         grid-area: #{$name};
-        background-image: url("../images/#{$name}-women-product-4.jpg");
+        background-image: url("../images/#{$name}-women-product-#{$randomNum}.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -231,7 +236,7 @@ main{
 
 
 .product-collection{
-    background-image: url(../images/image-product-4.jpg);
+    background-image: url(../images/image-product-#{$randomNum}.jpg);
     height: 28em;
     @include mQ(1100px){
         height: 24em;
