@@ -86,6 +86,7 @@ let cartParent = document.querySelector('.cart-parent'),
     cartContent = document.querySelector('.cart_content'),
     numOfProduct = document.querySelector('.cart-number'),
     addToCartButton = document.querySelectorAll('.add-to-cart-btn'),
+    added = document.querySelector('.added'),
     productImgSrc, productName, price, productNum, reviewedPrice, deleteBtn, cartProduct
    
     let numOfProductFunc = () => {
@@ -252,6 +253,11 @@ addToCartButton.forEach(element => {
             cartEmptyText.style.display = 'block'
             cartCheckOutBtn.style.display = 'none'
         }
+
+        added.style.opacity = '1'
+
+        setTimeout(() => {added.style.opacity = '0'}, 1000)
+
     
     })
 })

@@ -246,7 +246,7 @@ div.navLinks{
 
 
 .slide-in{
-    animation: slide-in 800ms 100ms ease-in-out forwards;
+    animation: slide-in 500ms 100ms ease-in-out forwards;
 }
 
 .slide-out{
@@ -692,6 +692,25 @@ div.profile{
     border-radius: 50%;
     animation: animate 1s linear infinite;
     z-index: -999;
+}
+
+.added {
+    position: fixed;
+    background: green;
+    color: hsl(0deg, 0%, 100%);
+    width: 30%;
+    left: 40%;
+    bottom: 7%;
+    z-index: 1;
+    text-align: center;
+    padding: 0.5em;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 350ms;
+    @include mQ($mobile){
+        width: 50%;
+        left: 25%;
+    }
 }
 
 
