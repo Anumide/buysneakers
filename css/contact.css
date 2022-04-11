@@ -51,49 +51,49 @@ body, .cart-parent, .cart_content {
 #load-logo > path:nth-child(2) {
   stroke-dasharray: 219.5168151855;
   stroke-dashoffset: 219.5168151855;
-  animation: loading 2s ease-in forwards;
+  animation: loading 2s ease-in infinite forwards;
 }
 
 #load-logo > path:nth-child(3) {
   stroke-dasharray: 268.6590881348;
   stroke-dashoffset: 268.6590881348;
-  animation: loading 2s 300ms ease-in forwards;
+  animation: loading 2s 300ms ease-in infinite forwards;
 }
 
 #load-logo > path:nth-child(4) {
   stroke-dasharray: 206.2070159912;
   stroke-dashoffset: 206.2070159912;
-  animation: loading 2s 600ms ease-in forwards;
+  animation: loading 2s 600ms ease-in infinite forwards;
 }
 
 #load-logo > path:nth-child(5) {
   stroke-dasharray: 217.9075927734;
   stroke-dashoffset: 217.9075927734;
-  animation: loading 2s 900ms ease-in forwards;
+  animation: loading 2s 900ms ease-in infinite forwards;
 }
 
 #load-logo > path:nth-child(6) {
   stroke-dasharray: 227.712097168;
   stroke-dashoffset: 227.712097168;
-  animation: loading 2s 1200ms ease-in forwards;
+  animation: loading 2s 1200ms ease-in infinite forwards;
 }
 
 #load-logo > path:nth-child(7) {
   stroke-dasharray: 206.2099914551;
   stroke-dashoffset: 206.2099914551;
-  animation: loading 2s 1500ms ease-in forwards;
+  animation: loading 2s 1500ms ease-in infinite forwards;
 }
 
 #load-logo > path:nth-child(8) {
   stroke-dasharray: 244.0299072266;
   stroke-dashoffset: 244.0299072266;
-  animation: loading 2s 1800ms ease-in forwards;
+  animation: loading 2s 1800ms ease-in infinite forwards;
 }
 
 #load-logo > path:nth-child(9) {
   stroke-dasharray: 219.5178070068;
   stroke-dashoffset: 219.5178070068;
-  animation: loading 2s 2100ms ease-in forwards;
+  animation: loading 2s 2100ms ease-in infinite forwards;
 }
 
 .loader.loaded {
@@ -673,6 +673,23 @@ div.profile img:hover {
   }
 }
 
+.button {
+  position: relative;
+  overflow: hidden;
+}
+
+.button span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  animation: animate 1s linear infinite;
+  z-index: -999;
+}
+
 @keyframes bounce {
   0% {
     transform: translateY(-2px);
@@ -755,6 +772,18 @@ div.profile img:hover {
 @keyframes loading {
   to {
     stroke-dashoffset: 0;
+  }
+}
+@keyframes animate {
+  from {
+    width: 0;
+    height: 0;
+    opacity: 0.4;
+  }
+  to {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
   }
 }
 .info {

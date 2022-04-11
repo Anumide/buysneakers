@@ -7,6 +7,7 @@ let mobileMenuContent = document.querySelector('.mobile-menu-parent')
 let closeMenu = document.querySelector('.close-menu')
 let cartImage = document.querySelector('.cart svg')
 let loader = document.querySelector('.loader')
+let btn = document.querySelectorAll('.button')
 
 
 // back to top 
@@ -21,6 +22,23 @@ window.addEventListener('scroll', (e) => {
 
 window.addEventListener('load', () => {
     setTimeout(() => {loader.classList.add('loaded')} , 2000)
+})
+
+btn.forEach(ele =>{ 
+    ele.addEventListener('click', (e) => {
+        // let x = e.clientX  
+        // let y = e.clientY
+
+        // console.log(x, e.target.offsetLeft - e.clientX);
+        // console.log(y, e.target.offsetTop - e.clientY);
+
+        let ripples = document.createElement('span')
+        // ripples.style.left = x + 'px'   
+        // ripples.style.top = y + 'px'
+        ele.appendChild(ripples)
+
+        setTimeout(() => {ripples.remove()} , 1000)
+    })
 })
 
 // functionality for cart 

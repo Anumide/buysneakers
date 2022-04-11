@@ -3,9 +3,11 @@
 @use "sass:math";
 @import 'header';
 
+
 @function changeNum(){
-   @return math.random(4);
+   @return  math.random(4);
 }
+
 
 
 

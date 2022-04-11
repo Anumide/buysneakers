@@ -26,7 +26,7 @@
 
 
 *{
-    font-family: 'Kumbh Sans', sans-serif;;
+    font-family: 'Kumbh Sans', sans-serif;
 }
 
 body, .cart-parent, .cart_content{
@@ -57,49 +57,49 @@ body, .cart-parent, .cart_content{
 #load-logo > path:nth-child(2){
     stroke-dasharray: 219.51681518554688;
     stroke-dashoffset: 219.51681518554688;
-    animation: loading 2s ease-in forwards;
+    animation: loading 2s ease-in infinite forwards;
 }
 
 #load-logo > path:nth-child(3){
     stroke-dasharray: 268.6590881347656;
     stroke-dashoffset: 268.6590881347656;
-    animation: loading 2s 300ms ease-in forwards;
+    animation: loading 2s 300ms ease-in infinite forwards;
 }
 
 #load-logo > path:nth-child(4){
     stroke-dasharray: 206.20701599121094;
     stroke-dashoffset: 206.20701599121094;
-    animation: loading 2s 600ms ease-in forwards;
+    animation: loading 2s 600ms ease-in infinite forwards;
 }
 
 #load-logo > path:nth-child(5){
     stroke-dasharray: 217.9075927734375;
     stroke-dashoffset: 217.9075927734375;
-    animation: loading 2s 900ms ease-in forwards;
+    animation: loading 2s 900ms ease-in infinite forwards;
 }
 
 #load-logo > path:nth-child(6){
     stroke-dasharray: 227.71209716796875;
     stroke-dashoffset: 227.71209716796875;
-    animation: loading 2s 1200ms ease-in forwards;
+    animation: loading 2s 1200ms ease-in infinite forwards;
 }
 
 #load-logo > path:nth-child(7){
     stroke-dasharray: 206.20999145507812;
     stroke-dashoffset: 206.20999145507812;
-    animation: loading 2s 1500ms ease-in forwards;
+    animation: loading 2s 1500ms ease-in infinite forwards;
 }
 
 #load-logo > path:nth-child(8){
     stroke-dasharray: 244.0299072265625;
     stroke-dashoffset: 244.0299072265625;
-    animation: loading 2s 1800ms ease-in forwards;
+    animation: loading 2s 1800ms ease-in infinite forwards;
 }
 
 #load-logo > path:nth-child(9){
     stroke-dasharray: 219.51780700683594;
     stroke-dashoffset: 219.51780700683594;
-    animation: loading 2s 2100ms ease-in forwards;
+    animation: loading 2s 2100ms ease-in infinite forwards;
 }
 
 .loader.loaded{
@@ -677,6 +677,23 @@ div.profile{
     }
 }
 
+.button{
+   position: relative;
+    overflow: hidden;
+}
+
+.button span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #fff;
+    transform: translate(-50%, -50%);
+    pointer-events:  none;
+    border-radius: 50%;
+    animation: animate 1s linear infinite;
+    z-index: -999;
+}
+
 
 //keyframes
 
@@ -771,5 +788,18 @@ div.profile{
 @keyframes loading {
     to{
         stroke-dashoffset: 0;
+    }
+}
+
+@keyframes animate{
+    from{
+        width: 0;
+        height: 0;
+        opacity: 0.4;
+    }
+    to{
+        width: 500px;
+        height: 500px;
+        opacity: 0;
     }
 }

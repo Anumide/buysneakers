@@ -96,55 +96,6 @@ let decreaseNumOne = document.querySelector('#neg-1'),
     addToCart3 = document.querySelector('#add-to-cart3')
 
 
-// decreaseNumOne.addEventListener('click', () => {
-  
-//     if (numOfOrderOne.textContent == 1 || numOfOrderOne.textContent == 0) {
-//         decreaseNumOne.style.opacity = '.4'
-//         numOfOrderOne.textContent = '0'
-//     }else{
-//         decreaseNumOne.style.opacity = '1'
-//         numOfOrderOne.textContent--
-//     }
-// })
-
-// increaseNumOne.addEventListener('click', (e) => {
-//     decreaseNumOne.style.opacity = '1'
-//     numOfOrderOne.textContent++
-// })
-
-
-// decreaseNumTwo.addEventListener('click', () => {
-    
-//     if (numOfOrderTwo.textContent == 1 || numOfOrderTwo.textContent == 0) {
-//         decreaseNumTwo.style.opacity = '.4'
-//         numOfOrderTwo.textContent = '0'
-//     }else{
-//         decreaseNumTwo.style.opacity = '1'
-//         numOfOrderTwo.textContent--
-//     }
-// })
-
-// increaseNumTwo.addEventListener('click', () => {
-//     decreaseNumTwo.style.opacity = '1'
-//     numOfOrderTwo.textContent++
-// })
-
-
-// decreaseNumThree.addEventListener('click', () => {
-    
-//     if (numOfOrderThree.textContent == 1 || numOfOrderThree.textContent == 0) {
-//         decreaseNumThree.style.opacity = '.4'
-//         numOfOrderThree.textContent = '0'
-//     }else{
-//         decreaseNumThree.style.opacity = '1'
-//         numOfOrderThree.textContent--
-//     }
-// })
-
-// increaseNumThree.addEventListener('click', () => {
-//     decreaseNumThree.style.opacity = '1'
-//     numOfOrderThree.textContent++
-// })
 
 decreaseNumOne.addEventListener('click', () => {
   
