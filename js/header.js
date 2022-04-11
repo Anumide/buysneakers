@@ -20,7 +20,6 @@ window.addEventListener('scroll', (e) => {
 })
 
 window.addEventListener('load', () => {
-    //loader.classList.add('loaded')
     setTimeout(() => {loader.classList.add('loaded')} , 2000)
 })
 
