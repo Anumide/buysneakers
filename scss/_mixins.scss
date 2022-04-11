@@ -36,7 +36,6 @@
         opacity: 0;
         transition: all 600ms;
         transform-origin: center right;
-        filter: blur(5px);
         pointer-events: none;
     }
     &:hover > div{
@@ -45,7 +44,6 @@
     &:hover > div h2,  &:hover > div p,  &:hover > div span,  &:hover > div .viewbtn{
         transform: translateY(0px) rotateZ(0deg);
         opacity: 1;
-        filter: blur(0px);
         pointer-events: visible;
     }
     > div{

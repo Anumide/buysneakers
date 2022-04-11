@@ -51,49 +51,49 @@ body, .cart-parent, .cart_content {
 #load-logo > path:nth-child(2) {
   stroke-dasharray: 219.5168151855;
   stroke-dashoffset: 219.5168151855;
-  animation: loading 3s ease-in forwards;
+  animation: loading 2s ease-in forwards;
 }
 
 #load-logo > path:nth-child(3) {
   stroke-dasharray: 268.6590881348;
   stroke-dashoffset: 268.6590881348;
-  animation: loading 3s 300ms ease-in forwards;
+  animation: loading 2s 300ms ease-in forwards;
 }
 
 #load-logo > path:nth-child(4) {
   stroke-dasharray: 206.2070159912;
   stroke-dashoffset: 206.2070159912;
-  animation: loading 3s 600ms ease-in forwards;
+  animation: loading 2s 600ms ease-in forwards;
 }
 
 #load-logo > path:nth-child(5) {
   stroke-dasharray: 217.9075927734;
   stroke-dashoffset: 217.9075927734;
-  animation: loading 3s 900ms ease-in forwards;
+  animation: loading 2s 900ms ease-in forwards;
 }
 
 #load-logo > path:nth-child(6) {
   stroke-dasharray: 227.712097168;
   stroke-dashoffset: 227.712097168;
-  animation: loading 3s 1200ms ease-in forwards;
+  animation: loading 2s 1200ms ease-in forwards;
 }
 
 #load-logo > path:nth-child(7) {
   stroke-dasharray: 206.2099914551;
   stroke-dashoffset: 206.2099914551;
-  animation: loading 3s 1500ms ease-in forwards;
+  animation: loading 2s 1500ms ease-in forwards;
 }
 
 #load-logo > path:nth-child(8) {
   stroke-dasharray: 244.0299072266;
   stroke-dashoffset: 244.0299072266;
-  animation: loading 3s 1800ms ease-in forwards;
+  animation: loading 2s 1800ms ease-in forwards;
 }
 
 #load-logo > path:nth-child(9) {
   stroke-dasharray: 219.5178070068;
   stroke-dashoffset: 219.5178070068;
-  animation: loading 3s 2100ms ease-in forwards;
+  animation: loading 2s 2100ms ease-in forwards;
 }
 
 .loader.loaded {
@@ -122,10 +122,6 @@ header {
 
 .hidden {
   visibility: hidden;
-}
-
-main {
-  animation: transitionIn 1s 400ms;
 }
 
 header nav {
@@ -392,7 +388,7 @@ div.profile img:hover {
 
 .back-to-top {
   position: fixed;
-  right: 5%;
+  right: 3%;
   bottom: 5%;
   display: flex;
   justify-content: center;
@@ -776,7 +772,6 @@ div.profile img:hover {
   opacity: 0;
   transition: all 600ms;
   transform-origin: center right;
-  filter: blur(5px);
   pointer-events: none;
 }
 .product-collection:hover > div {
@@ -785,7 +780,6 @@ div.profile img:hover {
 .product-collection:hover > div h2, .product-collection:hover > div p, .product-collection:hover > div span, .product-collection:hover > div .viewbtn {
   transform: translateY(0px) rotateZ(0deg);
   opacity: 1;
-  filter: blur(0px);
   pointer-events: visible;
 }
 .product-collection > div {
@@ -871,7 +865,7 @@ div.profile img:hover {
   border-radius: 10px;
   transition: all 0.2s linear;
   padding: 0.4em 0.6em;
-  width: 35%;
+  width: 45%;
   font-weight: 500;
   border-radius: 5px;
 }
@@ -921,7 +915,6 @@ div.profile img:hover {
   opacity: 0;
   transition: all 600ms;
   transform-origin: center right;
-  filter: blur(5px);
   pointer-events: none;
 }
 .nike-collection:hover > div {
@@ -930,7 +923,6 @@ div.profile img:hover {
 .nike-collection:hover > div h2, .nike-collection:hover > div p, .nike-collection:hover > div span, .nike-collection:hover > div .viewbtn {
   transform: translateY(0px) rotateZ(0deg);
   opacity: 1;
-  filter: blur(0px);
   pointer-events: visible;
 }
 .nike-collection > div {
@@ -1016,7 +1008,7 @@ div.profile img:hover {
   border-radius: 10px;
   transition: all 0.2s linear;
   padding: 0.4em 0.6em;
-  width: 35%;
+  width: 45%;
   font-weight: 500;
   border-radius: 5px;
 }
@@ -1066,7 +1058,6 @@ div.profile img:hover {
   opacity: 0;
   transition: all 600ms;
   transform-origin: center right;
-  filter: blur(5px);
   pointer-events: none;
 }
 .addidas-collection:hover > div {
@@ -1075,7 +1066,6 @@ div.profile img:hover {
 .addidas-collection:hover > div h2, .addidas-collection:hover > div p, .addidas-collection:hover > div span, .addidas-collection:hover > div .viewbtn {
   transform: translateY(0px) rotateZ(0deg);
   opacity: 1;
-  filter: blur(0px);
   pointer-events: visible;
 }
 .addidas-collection > div {
@@ -1161,7 +1151,7 @@ div.profile img:hover {
   border-radius: 10px;
   transition: all 0.2s linear;
   padding: 0.4em 0.6em;
-  width: 35%;
+  width: 45%;
   font-weight: 500;
   border-radius: 5px;
 }
@@ -1211,7 +1201,6 @@ div.profile img:hover {
   opacity: 0;
   transition: all 600ms;
   transform-origin: center right;
-  filter: blur(5px);
   pointer-events: none;
 }
 .puma-collection:hover > div {
@@ -1220,7 +1209,6 @@ div.profile img:hover {
 .puma-collection:hover > div h2, .puma-collection:hover > div p, .puma-collection:hover > div span, .puma-collection:hover > div .viewbtn {
   transform: translateY(0px) rotateZ(0deg);
   opacity: 1;
-  filter: blur(0px);
   pointer-events: visible;
 }
 .puma-collection > div {
@@ -1306,7 +1294,7 @@ div.profile img:hover {
   border-radius: 10px;
   transition: all 0.2s linear;
   padding: 0.4em 0.6em;
-  width: 35%;
+  width: 45%;
   font-weight: 500;
   border-radius: 5px;
 }
@@ -1356,7 +1344,6 @@ div.profile img:hover {
   opacity: 0;
   transition: all 600ms;
   transform-origin: center right;
-  filter: blur(5px);
   pointer-events: none;
 }
 .newbalance-collection:hover > div {
@@ -1365,7 +1352,6 @@ div.profile img:hover {
 .newbalance-collection:hover > div h2, .newbalance-collection:hover > div p, .newbalance-collection:hover > div span, .newbalance-collection:hover > div .viewbtn {
   transform: translateY(0px) rotateZ(0deg);
   opacity: 1;
-  filter: blur(0px);
   pointer-events: visible;
 }
 .newbalance-collection > div {
@@ -1451,7 +1437,7 @@ div.profile img:hover {
   border-radius: 10px;
   transition: all 0.2s linear;
   padding: 0.4em 0.6em;
-  width: 35%;
+  width: 45%;
   font-weight: 500;
   border-radius: 5px;
 }
@@ -1501,7 +1487,6 @@ div.profile img:hover {
   opacity: 0;
   transition: all 600ms;
   transform-origin: center right;
-  filter: blur(5px);
   pointer-events: none;
 }
 .vans-collection:hover > div {
@@ -1510,7 +1495,6 @@ div.profile img:hover {
 .vans-collection:hover > div h2, .vans-collection:hover > div p, .vans-collection:hover > div span, .vans-collection:hover > div .viewbtn {
   transform: translateY(0px) rotateZ(0deg);
   opacity: 1;
-  filter: blur(0px);
   pointer-events: visible;
 }
 .vans-collection > div {
@@ -1596,7 +1580,7 @@ div.profile img:hover {
   border-radius: 10px;
   transition: all 0.2s linear;
   padding: 0.4em 0.6em;
-  width: 35%;
+  width: 45%;
   font-weight: 500;
   border-radius: 5px;
 }
@@ -1646,7 +1630,6 @@ div.profile img:hover {
   opacity: 0;
   transition: all 600ms;
   transform-origin: center right;
-  filter: blur(5px);
   pointer-events: none;
 }
 .alexander-collection:hover > div {
@@ -1655,7 +1638,6 @@ div.profile img:hover {
 .alexander-collection:hover > div h2, .alexander-collection:hover > div p, .alexander-collection:hover > div span, .alexander-collection:hover > div .viewbtn {
   transform: translateY(0px) rotateZ(0deg);
   opacity: 1;
-  filter: blur(0px);
   pointer-events: visible;
 }
 .alexander-collection > div {
@@ -1741,7 +1723,7 @@ div.profile img:hover {
   border-radius: 10px;
   transition: all 0.2s linear;
   padding: 0.4em 0.6em;
-  width: 35%;
+  width: 45%;
   font-weight: 500;
   border-radius: 5px;
 }
@@ -1791,7 +1773,6 @@ div.profile img:hover {
   opacity: 0;
   transition: all 600ms;
   transform-origin: center right;
-  filter: blur(5px);
   pointer-events: none;
 }
 .balenciaga-collection:hover > div {
@@ -1800,7 +1781,6 @@ div.profile img:hover {
 .balenciaga-collection:hover > div h2, .balenciaga-collection:hover > div p, .balenciaga-collection:hover > div span, .balenciaga-collection:hover > div .viewbtn {
   transform: translateY(0px) rotateZ(0deg);
   opacity: 1;
-  filter: blur(0px);
   pointer-events: visible;
 }
 .balenciaga-collection > div {
@@ -1886,7 +1866,7 @@ div.profile img:hover {
   border-radius: 10px;
   transition: all 0.2s linear;
   padding: 0.4em 0.6em;
-  width: 35%;
+  width: 45%;
   font-weight: 500;
   border-radius: 5px;
 }
@@ -1936,7 +1916,6 @@ div.profile img:hover {
   opacity: 0;
   transition: all 600ms;
   transform-origin: center right;
-  filter: blur(5px);
   pointer-events: none;
 }
 .off-white-collection:hover > div {
@@ -1945,7 +1924,6 @@ div.profile img:hover {
 .off-white-collection:hover > div h2, .off-white-collection:hover > div p, .off-white-collection:hover > div span, .off-white-collection:hover > div .viewbtn {
   transform: translateY(0px) rotateZ(0deg);
   opacity: 1;
-  filter: blur(0px);
   pointer-events: visible;
 }
 .off-white-collection > div {
@@ -2031,7 +2009,7 @@ div.profile img:hover {
   border-radius: 10px;
   transition: all 0.2s linear;
   padding: 0.4em 0.6em;
-  width: 35%;
+  width: 45%;
   font-weight: 500;
   border-radius: 5px;
 }
@@ -2081,7 +2059,6 @@ div.profile img:hover {
   opacity: 0;
   transition: all 600ms;
   transform-origin: center right;
-  filter: blur(5px);
   pointer-events: none;
 }
 .veja-collection:hover > div {
@@ -2090,7 +2067,6 @@ div.profile img:hover {
 .veja-collection:hover > div h2, .veja-collection:hover > div p, .veja-collection:hover > div span, .veja-collection:hover > div .viewbtn {
   transform: translateY(0px) rotateZ(0deg);
   opacity: 1;
-  filter: blur(0px);
   pointer-events: visible;
 }
 .veja-collection > div {
@@ -2176,7 +2152,7 @@ div.profile img:hover {
   border-radius: 10px;
   transition: all 0.2s linear;
   padding: 0.4em 0.6em;
-  width: 35%;
+  width: 45%;
   font-weight: 500;
   border-radius: 5px;
 }
@@ -2226,7 +2202,6 @@ div.profile img:hover {
   opacity: 0;
   transition: all 600ms;
   transform-origin: center right;
-  filter: blur(5px);
   pointer-events: none;
 }
 .gucci-collection:hover > div {
@@ -2235,7 +2210,6 @@ div.profile img:hover {
 .gucci-collection:hover > div h2, .gucci-collection:hover > div p, .gucci-collection:hover > div span, .gucci-collection:hover > div .viewbtn {
   transform: translateY(0px) rotateZ(0deg);
   opacity: 1;
-  filter: blur(0px);
   pointer-events: visible;
 }
 .gucci-collection > div {
@@ -2321,7 +2295,7 @@ div.profile img:hover {
   border-radius: 10px;
   transition: all 0.2s linear;
   padding: 0.4em 0.6em;
-  width: 35%;
+  width: 45%;
   font-weight: 500;
   border-radius: 5px;
 }
@@ -2371,7 +2345,6 @@ div.profile img:hover {
   opacity: 0;
   transition: all 600ms;
   transform-origin: center right;
-  filter: blur(5px);
   pointer-events: none;
 }
 .converse-collection:hover > div {
@@ -2380,7 +2353,6 @@ div.profile img:hover {
 .converse-collection:hover > div h2, .converse-collection:hover > div p, .converse-collection:hover > div span, .converse-collection:hover > div .viewbtn {
   transform: translateY(0px) rotateZ(0deg);
   opacity: 1;
-  filter: blur(0px);
   pointer-events: visible;
 }
 .converse-collection > div {
@@ -2466,7 +2438,7 @@ div.profile img:hover {
   border-radius: 10px;
   transition: all 0.2s linear;
   padding: 0.4em 0.6em;
-  width: 35%;
+  width: 45%;
   font-weight: 500;
   border-radius: 5px;
 }
@@ -2569,7 +2541,8 @@ main {
 }
 @media screen and (max-width: 1200px) {
   .nike-collection > div {
-    height: 55%;
+    height: 58%;
+    padding: 1em 0.5em;
   }
 }
 @media screen and (max-width: 800px) {
@@ -2744,7 +2717,8 @@ main {
 }
 @media screen and (max-width: 1200px) {
   .vans-collection > div {
-    height: 88%;
+    height: 95%;
+    padding: 1em 0.5em;
   }
 }
 @media screen and (max-width: 800px) {

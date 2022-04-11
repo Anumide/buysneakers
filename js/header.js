@@ -8,10 +8,6 @@ let closeMenu = document.querySelector('.close-menu')
 let cartImage = document.querySelector('.cart svg')
 let loader = document.querySelector('.loader')
 
-// let loadLogo = document.querySelectorAll('#load-logo > path')
-// loadLogo.forEach(logo => {
-//     console.log(`${logo} length is ${logo.getTotalLength()}`);
-// })
 
 // back to top 
 window.addEventListener('scroll', (e) => {
@@ -23,9 +19,10 @@ window.addEventListener('scroll', (e) => {
     }
 })
 
-// window.addEventListener('load', () => {
-//     loader.classList.add('loaded')
-// })
+window.addEventListener('load', () => {
+    //loader.classList.add('loaded')
+    setTimeout(() => {loader.classList.add('loaded')} , 2000)
+})
 
 // functionality for cart 
 cartbtn.addEventListener('click', () =>{
